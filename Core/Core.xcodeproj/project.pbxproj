@@ -16,6 +16,9 @@
 		42DC080B25CA0DF8003E8FB7 /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC080A25CA0DF8003E8FB7 /* Main.framework */; };
 		42DC080E25CA0DFD003E8FB7 /* Launch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC080D25CA0DFD003E8FB7 /* Launch.framework */; };
 		42DC084A25CA115F003E8FB7 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC084925CA115F003E8FB7 /* LaunchCoordinator.swift */; };
+		42DC086C25CA12C2003E8FB7 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC086B25CA12C2003E8FB7 /* Onboarding.framework */; };
+		42DC08B925CA15F4003E8FB7 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */; };
+		42DC08BD25CA1687003E8FB7 /* OnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		42DC080A25CA0DF8003E8FB7 /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC080D25CA0DFD003E8FB7 /* Launch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Launch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC084925CA115F003E8FB7 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
+		42DC086B25CA12C2003E8FB7 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42DC080425CA0DEB003E8FB7 /* Common.framework in Frameworks */,
+				42DC086C25CA12C2003E8FB7 /* Onboarding.framework in Frameworks */,
 				42DC080B25CA0DF8003E8FB7 /* Main.framework in Frameworks */,
 				42DC080825CA0DF3003E8FB7 /* TXKit.framework in Frameworks */,
 				42DC080E25CA0DFD003E8FB7 /* Launch.framework in Frameworks */,
@@ -79,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC06BB25CA01D7003E8FB7 /* TXAppDependencyContainer.swift */,
+				42DC08BB25CA167A003E8FB7 /* Onboarding */,
 			);
 			path = "Dependency Containers";
 			sourceTree = "<group>";
@@ -89,6 +97,7 @@
 				42DC07A825CA0A82003E8FB7 /* Coordinator.swift */,
 				42DC07AB25CA0A8B003E8FB7 /* TXAppCoordinator.swift */,
 				42DC084825CA1151003E8FB7 /* Launch */,
+				42DC08B725CA15E5003E8FB7 /* Onboarding */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 		42DC080225CA0DEB003E8FB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DC086B25CA12C2003E8FB7 /* Onboarding.framework */,
 				42DC080D25CA0DFD003E8FB7 /* Launch.framework */,
 				42DC080A25CA0DF8003E8FB7 /* Main.framework */,
 				42DC080725CA0DF3003E8FB7 /* TXKit.framework */,
@@ -110,6 +120,22 @@
 				42DC084925CA115F003E8FB7 /* LaunchCoordinator.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		42DC08B725CA15E5003E8FB7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		42DC08BB25CA167A003E8FB7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +241,9 @@
 				42DC07AC25CA0A8B003E8FB7 /* TXAppCoordinator.swift in Sources */,
 				42DC084A25CA115F003E8FB7 /* LaunchCoordinator.swift in Sources */,
 				42DC07A925CA0A82003E8FB7 /* Coordinator.swift in Sources */,
+				42DC08BD25CA1687003E8FB7 /* OnboardingDependencyContainer.swift in Sources */,
 				42DC06BC25CA01D7003E8FB7 /* TXAppDependencyContainer.swift in Sources */,
+				42DC08B925CA15F4003E8FB7 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

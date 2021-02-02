@@ -41,7 +41,9 @@ public class TXAppDependencyContainer {
     }
     
     func makeAppCoordinator() -> TXAppCoordinator {
-        return TXAppCoordinator(mainVcFactory: makeMainViewController, launchCoordinatorFactory: makeLaunchCoordinator)
+        return TXAppCoordinator(mainVcFactory: makeMainViewController,
+                                launchCoordinatorFactory: makeLaunchCoordinator,
+                                onboardingCoordinatorFactory: makeOnboardingCoordinator)
     }
     
     // MARK: - Launch
@@ -57,4 +59,15 @@ public class TXAppDependencyContainer {
     func makeLaunchCoordinator() -> LaunchCoordinator {
         return LaunchCoordinator(rootVc: sharedAppCoordinator.rootVc, launchVcFactory: makeLaunchViewController)
     }
+    
+    // MARK: - Onboarding coordinator
+    func makeOnboardingCoordinator() -> OnboardingCoordinator {
+        let dependencyContainer = OnboardingDependencyContainer(appDependencyContainer: self)
+        let onboardingCoordinator = OnboardingCoordinator(rootVc: sharedAppCoordinator.rootVc,
+                                                          onboardingVcFactory: dependencyContainer.makeOnboardingViewController,
+                                                          welcomeVcFactory: dependencyContainer.makeWelcomeViewController)
+        dependencyContainer.sharedOnboardingCoordinator = onboardingCoordinator
+        return onboardingCoordinator
+    }
+    
 }

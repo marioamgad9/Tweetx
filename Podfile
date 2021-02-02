@@ -61,6 +61,12 @@ target 'Launch' do
     reactivePods
 end
 
+target 'Onboarding' do
+    project 'Onboarding/Onboarding'
+    
+    reactivePods
+end
+
 # Post install
 post_install do |installer|
   installer.pods_project.targets.each do |target|

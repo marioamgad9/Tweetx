@@ -10,6 +10,7 @@ import Main
 
 typealias MainVcFactory = () -> MainViewController
 typealias LaunchCoordinatorFactory = () -> LaunchCoordinator
+typealias OnboardingCoordinatorFactory = () -> OnboardingCoordinator
 
 /**
  Handles coordination between the main app states (LaunchView, OnboardingView, etc...)
@@ -23,16 +24,20 @@ public class TXAppCoordinator: Coordinator {
     
     // Child coordinators
     public private(set) var launchCoordinator: LaunchCoordinator!
+    public private(set) var onboardingCoordinator: OnboardingCoordinator!
     
     // MARK: - Factories
     private let mainVcFactory: MainVcFactory
     private let launchCoordinatorFactory: LaunchCoordinatorFactory
+    private let onboardingCoordinatorFactory: OnboardingCoordinatorFactory
     
     // MARK: - Initializer
     init(mainVcFactory: @escaping MainVcFactory,
-         launchCoordinatorFactory: @escaping LaunchCoordinatorFactory) {
+         launchCoordinatorFactory: @escaping LaunchCoordinatorFactory,
+         onboardingCoordinatorFactory: @escaping OnboardingCoordinatorFactory) {
         self.mainVcFactory = mainVcFactory
         self.launchCoordinatorFactory = launchCoordinatorFactory
+        self.onboardingCoordinatorFactory = onboardingCoordinatorFactory
     }
     
     // MARK: - Methods
@@ -52,6 +57,11 @@ public class TXAppCoordinator: Coordinator {
     
     /// Navigates to the welcome view
     func goToOnboardingView() {
+//        signedInCoordinator?.finish()
+        onboardingCoordinator = onboardingCoordinatorFactory()
+        onboardingCoordinator.start() {
+            self.launchCoordinator?.finish()
+        }
     }
     
     /// Navigates to the signedin view

@@ -50,7 +50,9 @@ public class LaunchViewModel: ViewModelType {
     // MARK: - Internal logic
     private func loadUserSession() {
         // TODO: - Implement auth check logic
-        self.notSignedInResponder.notSignedIn()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.notSignedInResponder.notSignedIn()
+        }
     }
     
     // MARK: - Input events subscription

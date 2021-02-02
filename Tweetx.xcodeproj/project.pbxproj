@@ -28,6 +28,8 @@
 		42DC07A225CA095F003E8FB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42DC07A425CA095F003E8FB7 /* Localizable.strings */; };
 		42DC081225CA0E21003E8FB7 /* Launch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC081125CA0E21003E8FB7 /* Launch.framework */; };
 		42DC081325CA0E21003E8FB7 /* Launch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC081125CA0E21003E8FB7 /* Launch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42DC087225CA12CC003E8FB7 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC087125CA12CC003E8FB7 /* Onboarding.framework */; };
+		42DC087325CA12CC003E8FB7 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC087125CA12CC003E8FB7 /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +40,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				42DC071225CA03AA003E8FB7 /* Common.framework in Embed Frameworks */,
+				42DC087325CA12CC003E8FB7 /* Onboarding.framework in Embed Frameworks */,
 				42DC081325CA0E21003E8FB7 /* Launch.framework in Embed Frameworks */,
 				42DC071A25CA03B3003E8FB7 /* Main.framework in Embed Frameworks */,
 				42DC071825CA03B3003E8FB7 /* Core.framework in Embed Frameworks */,
@@ -67,6 +70,7 @@
 		42DC07A325CA095F003E8FB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42DC07A525CA097E003E8FB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42DC081125CA0E21003E8FB7 /* Launch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Launch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC087125CA12CC003E8FB7 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.debug.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.debug.xcconfig"; sourceTree = "<group>"; };
 		D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.release.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.release.xcconfig"; sourceTree = "<group>"; };
 		F946BB4DDF8322989CECB4B8 /* Pods_Tweetx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F93011B466B770EF7B4577 /* Pods_Tweetx.framework in Frameworks */,
+				42DC087225CA12CC003E8FB7 /* Onboarding.framework in Frameworks */,
 				42DC071B25CA03B3003E8FB7 /* TXKit.framework in Frameworks */,
 				42DC071725CA03B3003E8FB7 /* Core.framework in Frameworks */,
 				42DC071125CA03AA003E8FB7 /* Common.framework in Frameworks */,
@@ -92,6 +97,7 @@
 		4204B27017A1582790B12F84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DC087125CA12CC003E8FB7 /* Onboarding.framework */,
 				42DC081125CA0E21003E8FB7 /* Launch.framework */,
 				42DC071425CA03B3003E8FB7 /* Core.framework */,
 				42DC071525CA03B3003E8FB7 /* Main.framework */,
