@@ -18,3 +18,8 @@
 "btn.default_cancel" = "Cancel";
 "btn.default_okay" = "OKAY";
 "label.loading" = "Loading...";
+
+// MARK: - Onboarding Flow ------
+// MARK: Welcome screen
+"label.slogan" = "Welcome to the simplest Twiter Client ever";
+"btn.sign_in" = "SIGN IN USING TWITTER";

@@ -41,6 +41,7 @@
 		42DC079825CA074B003E8FB7 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC079725CA074B003E8FB7 /* Banner.swift */; };
 		42DC079B25CA0757003E8FB7 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC079A25CA0757003E8FB7 /* LoaderView.swift */; };
 		42DC087A25CA132D003E8FB7 /* TXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC087925CA132D003E8FB7 /* TXNavigationController.swift */; };
+		42DC08C225CA1C27003E8FB7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */; };
 		945C898DB723F0B3EF49AE3C /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F787A1B3ED3125CC675305B /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		42DC079725CA074B003E8FB7 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		42DC079A25CA0757003E8FB7 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		42DC087925CA132D003E8FB7 /* TXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXNavigationController.swift; sourceTree = "<group>"; };
+		42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		6B7D3C1013E3214244F46A40 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
 		F5A3E6B841B5EC1EFD637B22 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 		42DC079525CA073A003E8FB7 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08C025CA1C1A003E8FB7 /* Buttons */,
 				42DC087825CA1316003E8FB7 /* Navigation Controllers */,
 				42DC079625CA0744003E8FB7 /* Others */,
 			);
@@ -246,6 +249,14 @@
 				42DC087925CA132D003E8FB7 /* TXNavigationController.swift */,
 			);
 			path = "Navigation Controllers";
+			sourceTree = "<group>";
+		};
+		42DC08C025CA1C1A003E8FB7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		5002E33ACE43CE18DF5FCED0 /* Frameworks */ = {
@@ -403,6 +414,7 @@
 				42DC076B25CA057D003E8FB7 /* Fonts.swift in Sources */,
 				42DC076A25CA057D003E8FB7 /* Dimens.swift in Sources */,
 				42DC074F25CA052B003E8FB7 /* NiblessPageViewController.swift in Sources */,
+				42DC08C225CA1C27003E8FB7 /* PrimaryButton.swift in Sources */,
 				42DC069325C9FFC3003E8FB7 /* String+Localized.swift in Sources */,
 				42DC075E25CA0547003E8FB7 /* UIView+Layout.swift in Sources */,
 				42DC075425CA052B003E8FB7 /* NiblessViewController.swift in Sources */,

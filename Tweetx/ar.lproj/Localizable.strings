@@ -18,3 +18,8 @@
 "btn.default_cancel" = "الغاء";
 "btn.default_okay" = "حسناً";
 "label.loading" = "جاري التحميل...";
+
+// MARK: - Onboarding Flow ------
+// MARK: Welcome screen
+"label.slogan" = "مرحباً بك في ابسط مشغل تويتر";
+"btn.sign_in" = "تسجيل دخول بأستخدام تويتر";
