@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20F93011B466B770EF7B4577 /* Pods_Tweetx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F946BB4DDF8322989CECB4B8 /* Pods_Tweetx.framework */; };
 		42DC062425C9FBF6003E8FB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC062325C9FBF6003E8FB7 /* AppDelegate.swift */; };
 		42DC062625C9FBF6003E8FB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC062525C9FBF6003E8FB7 /* SceneDelegate.swift */; };
 		42DC062825C9FBF6003E8FB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC062725C9FBF6003E8FB7 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		42DC062C25C9FBFA003E8FB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42DC062F25C9FBFA003E8FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42DC063125C9FBFA003E8FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.debug.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.debug.xcconfig"; sourceTree = "<group>"; };
+		D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.release.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.release.xcconfig"; sourceTree = "<group>"; };
+		F946BB4DDF8322989CECB4B8 /* Pods_Tweetx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F93011B466B770EF7B4577 /* Pods_Tweetx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4204B27017A1582790B12F84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F946BB4DDF8322989CECB4B8 /* Pods_Tweetx.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		42DC061725C9FBF5003E8FB7 = {
 			isa = PBXGroup;
 			children = (
 				42DC062225C9FBF6003E8FB7 /* Tweetx */,
 				42DC062125C9FBF6003E8FB7 /* Products */,
+				7098CC97D82D63DEEF73B5AE /* Pods */,
+				4204B27017A1582790B12F84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = Tweetx;
 			sourceTree = "<group>";
 		};
+		7098CC97D82D63DEEF73B5AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */,
+				D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42DC063425C9FBFA003E8FB7 /* Build configuration list for PBXNativeTarget "Tweetx" */;
 			buildPhases = (
+				8EAB2BC805C5B330E6F80E0D /* [CP] Check Pods Manifest.lock */,
 				42DC061C25C9FBF6003E8FB7 /* Sources */,
 				42DC061D25C9FBF6003E8FB7 /* Frameworks */,
 				42DC061E25C9FBF6003E8FB7 /* Resources */,
+				2781B8671E9D88635E8DF3E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2781B8671E9D88635E8DF3E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tweetx/Pods-Tweetx-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tweetx/Pods-Tweetx-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tweetx/Pods-Tweetx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EAB2BC805C5B330E6F80E0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tweetx-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42DC061C25C9FBF6003E8FB7 /* Sources */ = {
@@ -283,12 +352,14 @@
 		};
 		42DC063525C9FBFA003E8FB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E35QS8KXV6;
 				INFOPLIST_FILE = Tweetx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +373,14 @@
 		};
 		42DC063625C9FBFA003E8FB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E35QS8KXV6;
 				INFOPLIST_FILE = Tweetx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
