@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		2DE25C4E5563E01917ACDA1C /* Pods_Launch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7A297F5CF8A01F9E5654CA /* Pods_Launch.framework */; };
 		42DC07EB25CA0DAD003E8FB7 /* Launch.h in Headers */ = {isa = PBXBuildFile; fileRef = 42DC07E925CA0DAD003E8FB7 /* Launch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42DC082225CA0E7C003E8FB7 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC082125CA0E7C003E8FB7 /* LaunchViewModel.swift */; };
+		42DC082525CA0E8D003E8FB7 /* TXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC082425CA0E8D003E8FB7 /* TXKit.framework */; };
+		42DC082925CA0E92003E8FB7 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC082825CA0E92003E8FB7 /* Common.framework */; };
+		42DC084125CA0FE7003E8FB7 /* LaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC084025CA0FE7003E8FB7 /* LaunchRootView.swift */; };
+		42DC084525CA110F003E8FB7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC084425CA110F003E8FB7 /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42DC07E625CA0DAD003E8FB7 /* Launch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Launch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC07E925CA0DAD003E8FB7 /* Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Launch.h; sourceTree = "<group>"; };
 		42DC07EA25CA0DAD003E8FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DC082125CA0E7C003E8FB7 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		42DC082425CA0E8D003E8FB7 /* TXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC082825CA0E92003E8FB7 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC084025CA0FE7003E8FB7 /* LaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRootView.swift; sourceTree = "<group>"; };
+		42DC084425CA110F003E8FB7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CD7A297F5CF8A01F9E5654CA /* Pods_Launch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Launch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E5841D1C8CCED716AA6B58 /* Pods-Launch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launch.release.xcconfig"; path = "Target Support Files/Pods-Launch/Pods-Launch.release.xcconfig"; sourceTree = "<group>"; };
 		DF8BCCA78AABAFDECDE0F163 /* Pods-Launch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launch.debug.xcconfig"; path = "Target Support Files/Pods-Launch/Pods-Launch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -25,7 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DC082925CA0E92003E8FB7 /* Common.framework in Frameworks */,
 				2DE25C4E5563E01917ACDA1C /* Pods_Launch.framework in Frameworks */,
+				42DC082525CA0E8D003E8FB7 /* TXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +65,7 @@
 		42DC07E825CA0DAD003E8FB7 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				42DC083E25CA0FC2003E8FB7 /* Controllers */,
 				42DC082025CA0E29003E8FB7 /* View Models */,
 				42DC07E925CA0DAD003E8FB7 /* Launch.h */,
 				42DC07EA25CA0DAD003E8FB7 /* Info.plist */,
@@ -63,8 +76,26 @@
 		42DC082025CA0E29003E8FB7 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				42DC082125CA0E7C003E8FB7 /* LaunchViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		42DC083E25CA0FC2003E8FB7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42DC083F25CA0FDC003E8FB7 /* Launch */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		42DC083F25CA0FDC003E8FB7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				42DC084425CA110F003E8FB7 /* LaunchViewController.swift */,
+				42DC084025CA0FE7003E8FB7 /* LaunchRootView.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		4420F1B2CBD7697FBEFF963B /* Pods */ = {
@@ -80,6 +111,8 @@
 		CB1C53A694ACD1E010241CD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DC082825CA0E92003E8FB7 /* Common.framework */,
+				42DC082425CA0E8D003E8FB7 /* TXKit.framework */,
 				CD7A297F5CF8A01F9E5654CA /* Pods_Launch.framework */,
 			);
 			name = Frameworks;
@@ -129,6 +162,7 @@
 				TargetAttributes = {
 					42DC07E525CA0DAD003E8FB7 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -207,6 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DC082225CA0E7C003E8FB7 /* LaunchViewModel.swift in Sources */,
+				42DC084525CA110F003E8FB7 /* LaunchViewController.swift in Sources */,
+				42DC084125CA0FE7003E8FB7 /* LaunchRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF8BCCA78AABAFDECDE0F163 /* Pods-Launch.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E35QS8KXV6;
@@ -357,6 +395,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4E5841D1C8CCED716AA6B58 /* Pods-Launch.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E35QS8KXV6;

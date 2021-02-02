@@ -7,6 +7,7 @@
 
 import Foundation
 import Main
+import Launch
 
 /**
  The root dependency container that contains the whole dependency graph for the app.
@@ -40,6 +41,20 @@ public class TXAppDependencyContainer {
     }
     
     func makeAppCoordinator() -> TXAppCoordinator {
-        return TXAppCoordinator(mainVcFactory: makeMainViewController)
+        return TXAppCoordinator(mainVcFactory: makeMainViewController, launchCoordinatorFactory: makeLaunchCoordinator)
+    }
+    
+    // MARK: - Launch
+    func makeLaunchViewController() -> LaunchViewController {
+        return LaunchViewController(viewModel: makeLaunchViewModel())
+    }
+    
+    func makeLaunchViewModel() -> LaunchViewModel {
+        return LaunchViewModel(notSignedInResponder: sharedMainViewModel,
+                               signedInResponder: sharedMainViewModel)
+    }
+    
+    func makeLaunchCoordinator() -> LaunchCoordinator {
+        return LaunchCoordinator(rootVc: sharedAppCoordinator.rootVc, launchVcFactory: makeLaunchViewController)
     }
 }

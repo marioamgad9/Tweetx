@@ -9,6 +9,7 @@ import Common
 import Main
 
 typealias MainVcFactory = () -> MainViewController
+typealias LaunchCoordinatorFactory = () -> LaunchCoordinator
 
 /**
  Handles coordination between the main app states (LaunchView, OnboardingView, etc...)
@@ -21,13 +22,17 @@ public class TXAppCoordinator: Coordinator {
     public private(set) lazy var rootVc: MainViewController = mainVcFactory()
     
     // Child coordinators
+    public private(set) var launchCoordinator: LaunchCoordinator!
     
     // MARK: - Factories
     private let mainVcFactory: MainVcFactory
+    private let launchCoordinatorFactory: LaunchCoordinatorFactory
     
     // MARK: - Initializer
-    init(mainVcFactory: @escaping MainVcFactory) {
+    init(mainVcFactory: @escaping MainVcFactory,
+         launchCoordinatorFactory: @escaping LaunchCoordinatorFactory) {
         self.mainVcFactory = mainVcFactory
+        self.launchCoordinatorFactory = launchCoordinatorFactory
     }
     
     // MARK: - Methods
@@ -41,6 +46,8 @@ public class TXAppCoordinator: Coordinator {
 
     /// Navigates to the launch view
     func goToLaunchView() {
+        launchCoordinator = launchCoordinatorFactory()
+        launchCoordinator.start()
     }
     
     /// Navigates to the welcome view

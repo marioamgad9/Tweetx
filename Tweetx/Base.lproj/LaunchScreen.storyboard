@@ -18,15 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0fK-OF-S12">
-                                <rect key="frame" x="83" y="385.5" width="248" height="125"/>
+                                <rect key="frame" x="57" y="408.5" width="300" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Tk4-nm-IqF"/>
+                                    <constraint firstAttribute="height" constant="79" id="Y1D-Hf-5SV"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
-                            <constraint firstItem="0fK-OF-S12" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NBl-8l-hpw"/>
-                            <constraint firstItem="0fK-OF-S12" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xhh-PI-IbZ"/>
-                            <constraint firstItem="0fK-OF-S12" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="phi-zx-ocs"/>
+                            <constraint firstItem="0fK-OF-S12" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="MBI-I9-SGG"/>
+                            <constraint firstItem="0fK-OF-S12" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aCF-ka-7dz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fK-OF-S12" secondAttribute="trailing" constant="32" id="xom-jC-ZKI"/>
+                            <constraint firstItem="0fK-OF-S12" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zrm-Li-dsS"/>
                         </constraints>
                     </view>
                 </viewController>
