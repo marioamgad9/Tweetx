@@ -13,8 +13,7 @@ def reactivePods
     pod 'PromiseKit', '~> 6.8'
 end
 
-
-
+# CrescendoesStudent project module --------
 target 'Tweetx' do
   project 'Tweetx'
 
@@ -31,6 +30,16 @@ target 'Tweetx' do
 
   # Pod for SDWebImage
   pod 'SDWebImage', '~> 5.0'
+end
+
+# Shared modules --------
+target 'Common' do
+    project 'Common/Common'
+    
+    reactivePods
+    
+    # Pod for lottie animations
+    pod 'lottie-ios'
 end
 
 # Post install

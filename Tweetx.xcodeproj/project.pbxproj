@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -88,7 +88,6 @@
 				CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */,
 				D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

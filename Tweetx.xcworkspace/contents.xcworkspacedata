@@ -4,6 +4,13 @@
    <FileRef
       location = "group:Tweetx.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "Shared">
+      <FileRef
+         location = "group:Common/Common.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
