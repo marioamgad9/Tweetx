@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Tweetx
+
+  Created by Mario Mouris on 03/02/2021.
+  
+*/
+
+// MARK: - Global
+// Genergic error dialogs
+"error_title.unexpected_error" = "خطأ غير متوقع";
+"error_message.unexpected_error" = "لقد حدث خطأ غير متوقع, يرجى المحاولة مرة اخري او التواصل مع الدعم";
+"error_title.no_internet" = "اتصال انترنت غير مستقر";
+"error_message.no_internet" = "اتصال الإنترنت الخاص بك غير مستقر حاليا, حاول مرة أخرى لاحقاً";
+"error_cta.try_again" = "حاول مرة أخرى";
+ 
+// Misc.
+"btn.default_cancel" = "الغاء";
+"btn.default_okay" = "حسناً";
+"label.loading" = "جاري التحميل...";

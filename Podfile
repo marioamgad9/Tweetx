@@ -42,6 +42,18 @@ target 'Common' do
     pod 'lottie-ios'
 end
 
+target 'TXKit' do
+    project 'TXKit/TXKit'
+    
+    reactivePods
+    
+    # Pod for alamofire
+    pod 'Alamofire', '~> 5.2'
+    
+    # Pod for keychain access
+    pod 'KeychainAccess'
+end
+
 # Post install
 post_install do |installer|
   installer.pods_project.targets.each do |target|

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Tweetx
+
+  Created by Mario Mouris on 03/02/2021.
+  
+*/
+
+// MARK: - Global
+// Genergic error dialogs
+"error_title.unexpected_error" = "Unexpected error";
+"error_message.unexpected_error" = "An unexpected error occured, please try again or contact support.";
+"error_title.no_internet" = "Bad internet connection";
+"error_message.no_internet" = "Your internet connection is not the best right now. Please try again later.";
+"error_cta.try_again" = "TRY AGAIN";
+
+// Misc.
+"btn.default_cancel" = "Cancel";
+"btn.default_okay" = "OKAY";
+"label.loading" = "Loading...";
