@@ -23,6 +23,9 @@
       <FileRef
          location = "group:Main/Main.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Launch/Launch.xcodeproj">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

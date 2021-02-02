@@ -54,6 +54,13 @@ target 'TXKit' do
     pod 'KeychainAccess'
 end
 
+# Feature modules --------
+target 'Launch' do
+    project 'Launch/Launch'
+    
+    reactivePods
+end
+
 # Post install
 post_install do |installer|
   installer.pods_project.targets.each do |target|
