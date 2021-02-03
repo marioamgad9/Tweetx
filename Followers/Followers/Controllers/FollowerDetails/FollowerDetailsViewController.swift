@@ -55,7 +55,7 @@ public class FollowerDetailsViewController: NiblessViewController {
     
     private func subscribeToFollower() {
         viewModel.output.follower.drive(onNext: {
-            self.title = $0.name
+            self.rootView.header.configure(with: FollowerDetailsHeaderViewModel(follower: $0))
         }).disposed(by: disposeBag)
     }
     

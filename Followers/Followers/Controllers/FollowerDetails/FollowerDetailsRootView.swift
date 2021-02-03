@@ -13,10 +13,13 @@ class FollowerDetailsRootView: NiblessView, Loadable {
     
     // MARK: - Views
     var loaderView = LoaderView(style: .transparent, animated: true)
+    let header = FollowerDetailsHeader()
     let tweetsTableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.insetsContentViewsToSafeArea = false
+        tableView.contentInsetAdjustmentBehavior = .never
         return tableView
     }()
     
@@ -32,7 +35,7 @@ class FollowerDetailsRootView: NiblessView, Loadable {
     override func configureViewHierarchy() {
         // Add tweets table view
         add(tweetsTableView, then: {
-            $0.fillSuperview(padding: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0))
+            $0.fillSuperview()
         })
         
         // Bring loader to front
@@ -45,6 +48,21 @@ class FollowerDetailsRootView: NiblessView, Loadable {
     }
     
     private func configureTableViews() {
+        tweetsTableView.delegate = self
+    }
+}
+
+// MARK: - Table view delegate
+extension FollowerDetailsRootView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 150
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
 }
