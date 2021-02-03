@@ -42,6 +42,7 @@
 		42DC079B25CA0757003E8FB7 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC079A25CA0757003E8FB7 /* LoaderView.swift */; };
 		42DC087A25CA132D003E8FB7 /* TXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC087925CA132D003E8FB7 /* TXNavigationController.swift */; };
 		42DC08C225CA1C27003E8FB7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */; };
+		42DC098C25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */; };
 		945C898DB723F0B3EF49AE3C /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F787A1B3ED3125CC675305B /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		42DC079A25CA0757003E8FB7 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		42DC087925CA132D003E8FB7 /* TXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXNavigationController.swift; sourceTree = "<group>"; };
 		42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDataSourceConfigurator.swift; sourceTree = "<group>"; };
 		6B7D3C1013E3214244F46A40 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
 		F5A3E6B841B5EC1EFD637B22 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				42DC076025CA054F003E8FB7 /* Protocols */,
 				42DC075825CA053E003E8FB7 /* Layout */,
 				42DC074425CA051C003E8FB7 /* Nibless Components */,
+				42DC098A25CAEA13003E8FB7 /* Reusable */,
 				42DC076625CA056F003E8FB7 /* Style */,
 			);
 			path = UIKit;
@@ -257,6 +260,14 @@
 				42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		42DC098A25CAEA13003E8FB7 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		5002E33ACE43CE18DF5FCED0 /* Frameworks */ = {
@@ -410,6 +421,7 @@
 				42DC078C25CA06EC003E8FB7 /* UICollectionViewCell+Dequeue.swift in Sources */,
 				42DC078725CA06EC003E8FB7 /* UIColor+Hex.swift in Sources */,
 				42DC078825CA06EC003E8FB7 /* UIScrollView+Helpers.swift in Sources */,
+				42DC098C25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift in Sources */,
 				42DC087A25CA132D003E8FB7 /* TXNavigationController.swift in Sources */,
 				42DC076B25CA057D003E8FB7 /* Fonts.swift in Sources */,
 				42DC076A25CA057D003E8FB7 /* Dimens.swift in Sources */,

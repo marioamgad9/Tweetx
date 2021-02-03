@@ -31,7 +31,7 @@ public class FollowersListViewController: NiblessViewController {
     
     // MARK: - Methods
     public override func loadView() {
-        rootView = FollowersListRootView()
+        rootView = FollowersListRootView(followersTvConfigurator: configureFollowersTableView(tableView:))
         view = rootView
     }
     
@@ -41,17 +41,17 @@ public class FollowersListViewController: NiblessViewController {
         viewModel.input.fetchFollowers.onNext(())
         
         // Subscribe to view model events
-        subscribeToFollowers()
         subscribeToIsLoading()
         subscribeToErrorMessages()
         
         // Bind input events to view model
     }
     
-    private func subscribeToFollowers() {
-        viewModel.output.followers.drive(onNext: {
-            print("REMOVETHISLOG - Followers received: \($0)")
-        }).disposed(by: disposeBag)
+    private func configureFollowersTableView(tableView: UITableView) {
+        viewModel.output.followers.drive(tableView.rx.items(cellIdentifier: FollowerTableViewCell.reuseIdentifier,
+                                                        cellType: FollowerTableViewCell.self)) { (_, user, cell) in
+            cell.configure(with: user)
+        }.disposed(by: disposeBag)
     }
     
     private func subscribeToIsLoading() {

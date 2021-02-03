@@ -26,6 +26,7 @@ class FollowerTableViewCell: NiblessTableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        imageView.layer.cornerRadius = Dimens.cornerRadius
         return imageView
     }()
     
@@ -64,13 +65,17 @@ class FollowerTableViewCell: NiblessTableViewCell {
     
     private let footerViewContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.secondary.value.withAlphaComponent(0.7)
+        view.backgroundColor = Color.secondary.value
         return view
     }()
     
     // MARK: - Methods
     func configure(with viewModel: FollowerCellViewModel) {
-        
+        profilePictureImageView.sd_setImage(with: viewModel.profilePictureURL,
+                                            placeholderImage: UIImage(named: "profile-placeholder"))
+        nameLabel.text = viewModel.name
+        handleLabel.text = viewModel.twitterHandle
+        bioLabel.text = viewModel.bio
     }
     
     override func configureViewHierarchy() {
@@ -101,7 +106,7 @@ class FollowerTableViewCell: NiblessTableViewCell {
         // Add bio label
         cardView.add(bioLabel, then: {
             $0.anchor(.leading(cardView.leadingAnchor, constant: 16),
-                      .top(userInfoStackView.bottomAnchor, constant: 8),
+                      .top(userInfoStackView.bottomAnchor, constant: 16),
                       .trailing(cardView.trailingAnchor, constant: -16))
         })
         
@@ -115,14 +120,14 @@ class FollowerTableViewCell: NiblessTableViewCell {
             $0.anchor(.leading(cardView.leadingAnchor),
                       .top(bioLabel.bottomAnchor, constant: 16),
                       .trailing(cardView.trailingAnchor),
-                      .bottom(cardView.bottomAnchor, constant: -16))
+                      .bottom(cardView.bottomAnchor))
         })
         
         // Add cardview
         add(cardView, then:{
-            $0.anchor(.leading(leadingAnchor),
+            $0.anchor(.leading(leadingAnchor, constant: 16),
                       .top(topAnchor),
-                      .trailing(trailingAnchor),
+                      .trailing(trailingAnchor, constant: -16),
                       .bottom(bottomAnchor, constant: -10))
         })
     }

@@ -13,14 +13,28 @@ class FollowersListRootView: NiblessView, Loadable {
     
     // MARK: - Views
     var loaderView = LoaderView(style: .transparent, animated: true)
+    let followersTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        return tableView
+    }()
     
     // MARK: - Initializer
-    override init(frame: CGRect = .zero) {
-        super.init(frame: frame)
+    init(followersTvConfigurator: TvDataSourceConfigurator) {
+        super.init(frame: .zero)
+        
+        configureTableViews()
+        followersTvConfigurator(followersTableView)
     }
     
     // MARK: - Methods
     override func configureViewHierarchy() {
+        // Add followers table view
+        add(followersTableView, then: {
+            $0.fillSuperview(padding: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0))
+        })
+        
         // Bring loader to front
         bringSubviewToFront(loaderView)
     }
@@ -28,5 +42,9 @@ class FollowersListRootView: NiblessView, Loadable {
     override func viewHierarchyDidConfigure() {
         // Set background color
         backgroundColor = Color.offWhite.value
+    }
+    
+    private func configureTableViews() {
+        followersTableView.registerCellFromClass(FollowerTableViewCell.self)
     }
 }

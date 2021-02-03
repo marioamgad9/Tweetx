@@ -20,7 +20,7 @@ public class FollowersListViewModel: ViewModelType {
     }
     
     public struct Output {
-        let followers: Driver<[TwitterUser]>
+        let followers: Driver<[FollowerCellViewModel]>
         let isLoading: Driver<Bool>
         let errorMessage: Driver<ErrorMessage>
     }
@@ -42,7 +42,7 @@ public class FollowersListViewModel: ViewModelType {
         
         // Configure input & output
         input = Input()
-        output = Output(followers: followersSubject.asDriver(onErrorJustReturn: []),
+        output = Output(followers: followersSubject.map { $0.map { FollowerCellViewModel(follower: $0) } }.asDriver(onErrorJustReturn: []),
                         isLoading: isLoadingSubject.asDriver(onErrorJustReturn: false),
                         errorMessage: errorMessageSubject.asDriver { _ in fatalError() })
         

@@ -14,14 +14,19 @@ class FollowerCellViewModel {
     let name: String
     let twitterHandle: String
     let bio: String?
-    let profilePicture: String?
+    let profilePictureURL: URL?
     
     // MARK: - Initializer
     init(follower: TwitterUser) {
         self.name = follower.name
         self.twitterHandle = follower.twitterHandle
         self.bio = follower.bio
-        self.profilePicture = follower.profilePicture
+        
+        if let profilePicture = follower.profilePicture {
+            self.profilePictureURL = URL(string: profilePicture)
+        } else {
+            self.profilePictureURL = nil
+        }
     }
 }
 
