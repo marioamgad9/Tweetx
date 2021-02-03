@@ -12,9 +12,17 @@ import Common
 public class FollowersNavigationController: TXNavigationController {
 
     // MARK: - Methods
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        isNavigationBarHidden = false
+    func hideOrShowNavigationBarIfNeeded(for view: FollowersView, animated: Bool) {
+        setNavigationBarHidden(view.hidesNavigationBar(), animated: animated)
     }
 }
+
+// MARK: - View state responder
+extension FollowersNavigationController: FollowersStateResponder {
+    public func viewStateWillChange(followersView: FollowersView) {
+        hideOrShowNavigationBarIfNeeded(for: followersView, animated: true)
+    }
+    
+    public func viewStateDidChange(followersView: FollowersView) { }
+}
+

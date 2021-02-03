@@ -49,6 +49,7 @@ public class FollowersCoordinator: NSObject, Coordinator {
     /// Starts the app coordinator flow, with attaching the onboarding view controller to the root
     public func start(completionHandler: CoordinatorStartCompletionHandler? = nil) {
         followersVc = followersVcFactory()
+        followersVc.delegate = self
         rootVc.addFullScreen(childViewController: followersVc)
         navigate(to: .followersList)
         isStarted = true
@@ -82,6 +83,36 @@ extension FollowersCoordinator: FollowersNavigator {
             goToFollowersListView()
         case .followerDetails(let follower):
             goToFollowerDetailsView(follower: follower)
+        }
+    }
+}
+
+// MARK: - Navigation delegate
+extension FollowersCoordinator: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController,
+                                     willShow viewController: UIViewController,
+                                     animated: Bool) {
+        guard let viewToBeShown = followersView(associatedWith: viewController) else { return }
+        followersVc.viewStateWillChange(followersView: viewToBeShown)
+    }
+    
+    public func navigationController(_ navigationController: UINavigationController,
+                                     didShow viewController: UIViewController,
+                                     animated: Bool) {
+        guard let shownView = followersView(associatedWith: viewController) else { return }
+        followersVc.viewStateDidChange(followersView: shownView)
+    }
+    
+    /// Gets the FollowersView out of the shown view controller
+    func followersView(associatedWith viewController: UIViewController) -> FollowersView? {
+        switch viewController {
+        case is FollowersListViewController:
+            return .followersList
+        case is FollowerDetailsViewController:
+            return .followerDetails(follower: TwitterUser.dummyValue())
+        default:
+            assertionFailure("Encountered unexpected child view controller type in FollowersCoordinator")
+            return nil
         }
     }
 }

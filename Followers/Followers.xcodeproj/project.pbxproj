@@ -22,6 +22,7 @@
 		42DC099025CAF28F003E8FB7 /* FollowerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098F25CAF28E003E8FB7 /* FollowerDetailsViewModel.swift */; };
 		42DC099C25CAF9B0003E8FB7 /* FollowerDetailsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC099B25CAF9B0003E8FB7 /* FollowerDetailsRootView.swift */; };
 		42DC099F25CAF9FA003E8FB7 /* FollowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC099E25CAF9FA003E8FB7 /* FollowerDetailsViewController.swift */; };
+		42DC09A325CB0130003E8FB7 /* FollowersStateResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09A225CB0130003E8FB7 /* FollowersStateResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		42DC098F25CAF28E003E8FB7 /* FollowerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsViewModel.swift; sourceTree = "<group>"; };
 		42DC099B25CAF9B0003E8FB7 /* FollowerDetailsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsRootView.swift; sourceTree = "<group>"; };
 		42DC099E25CAF9FA003E8FB7 /* FollowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsViewController.swift; sourceTree = "<group>"; };
+		42DC09A225CB0130003E8FB7 /* FollowersStateResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersStateResponder.swift; sourceTree = "<group>"; };
 		465DD396E51EBE7927C19A63 /* Pods_Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.release.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */,
+				42DC09A225CB0130003E8FB7 /* FollowersStateResponder.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */,
 				42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */,
 				42DC090225CAD22C003E8FB7 /* FollowersListRootView.swift in Sources */,
+				42DC09A325CB0130003E8FB7 /* FollowersStateResponder.swift in Sources */,
 				42DC098725CAE633003E8FB7 /* FollowerCellViewModel.swift in Sources */,
 				42DC099C25CAF9B0003E8FB7 /* FollowerDetailsRootView.swift in Sources */,
 				42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */,

@@ -12,4 +12,13 @@ import TXKit
 public enum FollowersView {
     case followersList
     case followerDetails(follower: TwitterUser)
+    
+    public func hidesNavigationBar() -> Bool {
+        switch self {
+        case .followersList:
+            return false
+        case .followerDetails:
+            return true
+        }
+    }
 }
