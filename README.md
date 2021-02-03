@@ -2,7 +2,6 @@
 # Tweetx
 The Tweetx app as an iOS sample app and not a real-world application. It's created to perform simple Twitter operations like track followers and see their tweets. Of course a sample app like this is not meant to be scalable, but I've built it with scalability in mind to demonstrate how that would be tackled in a real-world scenario.
 
----
 
 ## Architecture
 
@@ -16,9 +15,8 @@ This sample app was built using a modular version of MVVM. It's built with scala
 * **Main**: Acts as the root view controller and handles switching between the main states of the app.
 * **Launch**: Handles launching the app with a loading animation and checks for the authentication status of the user to determine whether or not they should sign in.
 * **Onboarding**: Handles authenticating the user and welcoming him/her to the system.
-* **TwitterFollowers**: Handles showing the list of followers for the user and basic actions on them.
+* **Followers**: Handles showing the list of followers for the user and basic actions on them.
 
----
 
 ## Requirements
 
@@ -26,7 +24,6 @@ This sample app was built using a modular version of MVVM. It's built with scala
 - Xcode 12+
 - Swift 5+
 
----
 
 ## Installation
 
@@ -37,7 +34,6 @@ Setup the workspace using:
 $ pod install
 ```
 
----
 
 ## Author
 Mario Mouris, mario@mariomouris.me
