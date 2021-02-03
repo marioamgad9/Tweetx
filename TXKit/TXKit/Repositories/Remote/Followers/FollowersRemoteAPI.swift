@@ -10,4 +10,5 @@ import PromiseKit
 /// Handles getting the followers and their info
 public protocol FollowersRemoteAPI {
     func getFollowers() -> Promise<[TwitterUser]>
+    func getTweetsForFollower(followerId: Int) -> Promise<[Tweet]>
 }

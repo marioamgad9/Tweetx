@@ -19,6 +19,7 @@
 		42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */; };
 		42DC098225CAE61F003E8FB7 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */; };
 		42DC098725CAE633003E8FB7 /* FollowerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */; };
+		42DC099025CAF28F003E8FB7 /* FollowerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098F25CAF28E003E8FB7 /* FollowerDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
 		42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCellViewModel.swift; sourceTree = "<group>"; };
+		42DC098F25CAF28E003E8FB7 /* FollowerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsViewModel.swift; sourceTree = "<group>"; };
 		465DD396E51EBE7927C19A63 /* Pods_Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.release.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 			children = (
 				42DC098525CAE625003E8FB7 /* Cells */,
 				42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */,
+				42DC098F25CAF28E003E8FB7 /* FollowerDetailsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */,
 				42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */,
 				42DC098225CAE61F003E8FB7 /* FollowerTableViewCell.swift in Sources */,
+				42DC099025CAF28F003E8FB7 /* FollowerDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
