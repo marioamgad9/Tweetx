@@ -8,9 +8,11 @@
 import UIKit
 import Common
 import Followers
+import TXKit
 
 typealias FollowersVcFactory = () -> FollowersNavigationController
 typealias FollowersListVcFactory = () -> FollowersListViewController
+typealias FollowerDetailsVcFactory = (TwitterUser) -> FollowerDetailsViewController
 
 /**
  The coordinator that handles the followers navigation.
@@ -30,14 +32,17 @@ public class FollowersCoordinator: NSObject, Coordinator {
     // Factories
     private let followersVcFactory: FollowersVcFactory
     private let followersListVcFactory: FollowersListVcFactory
+    private let followerDetailsVcFactory: FollowerDetailsVcFactory
     
     // MARK: - Initializer
     init(rootVc: NiblessViewController,
          followersVcFactory: @escaping FollowersVcFactory,
-         followersListVcFactory: @escaping FollowersListVcFactory) {
+         followersListVcFactory: @escaping FollowersListVcFactory,
+         followerDetailsVcFactory: @escaping FollowerDetailsVcFactory) {
         self.rootVc = rootVc
         self.followersVcFactory = followersVcFactory
         self.followersListVcFactory = followersListVcFactory
+        self.followerDetailsVcFactory = followerDetailsVcFactory
     }
     
     // MARK: - Methods
@@ -61,6 +66,12 @@ public class FollowersCoordinator: NSObject, Coordinator {
         let followersListVc = followersListVcFactory()
         followersVc.pushViewController(followersListVc, animated: false)
     }
+    
+    /// Navigates to follwoer details
+    func goToFollowerDetailsView(follower: TwitterUser) {
+        let followerDetailsVc = followerDetailsVcFactory(follower)
+        followersVc.pushViewController(followerDetailsVc, animated: true)
+    }
 }
 
 // MARK: - Followers navigator
@@ -69,6 +80,8 @@ extension FollowersCoordinator: FollowersNavigator {
         switch followersView {
         case .followersList:
             goToFollowersListView()
+        case .followerDetails(let follower):
+            goToFollowerDetailsView(follower: follower)
         }
     }
 }

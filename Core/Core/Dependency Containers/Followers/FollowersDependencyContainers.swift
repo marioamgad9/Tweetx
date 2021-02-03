@@ -40,4 +40,15 @@ public class FollowersDependencyContainer {
         return FollowersListViewModel(followersRemoteAPI: sharedFollowersRemoteAPI,
                                       followersNavigator: sharedFollowersCoordinator)
     }
+    
+    // Follower details
+    func makeFollowerDetailsViewController(follower: TwitterUser) -> FollowerDetailsViewController {
+        return FollowerDetailsViewController(viewModel: makeFollowerDetailsViewModel(follower: follower))
+    }
+    
+    func makeFollowerDetailsViewModel(follower: TwitterUser) -> FollowerDetailsViewModel {
+        return FollowerDetailsViewModel(follower: follower,
+                                        followersRemoteAPI: sharedFollowersRemoteAPI,
+                                        followersNavigator: sharedFollowersCoordinator)
+    }
 }

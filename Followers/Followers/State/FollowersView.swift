@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import TXKit
 
 /// The various states a Followers view can be in.
 public enum FollowersView {
     case followersList
+    case followerDetails(follower: TwitterUser)
 }
-
-

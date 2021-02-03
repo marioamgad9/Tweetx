@@ -76,7 +76,8 @@ public class TXAppDependencyContainer {
         let dependencyContainer = FollowersDependencyContainer(appDependencyContainer: self)
         let followersCoordinator = FollowersCoordinator(rootVc: sharedAppCoordinator.rootVc,
                                                         followersVcFactory: dependencyContainer.makeFollowersViewController,
-                                                        followersListVcFactory: dependencyContainer.makeFollowersListViewController)
+                                                        followersListVcFactory: dependencyContainer.makeFollowersListViewController,
+                                                        followerDetailsVcFactory: dependencyContainer.makeFollowerDetailsViewController(follower:))
         dependencyContainer.sharedFollowersCoordinator = followersCoordinator
         return followersCoordinator
     }

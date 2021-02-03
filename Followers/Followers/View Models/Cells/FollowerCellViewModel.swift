@@ -11,6 +11,7 @@ import TXKit
 class FollowerCellViewModel {
     
     // MARK: - Properties
+    let follower: TwitterUser
     let name: String
     let twitterHandle: String
     let bio: String?
@@ -18,6 +19,7 @@ class FollowerCellViewModel {
     
     // MARK: - Initializer
     init(follower: TwitterUser) {
+        self.follower = follower
         self.name = follower.name
         self.twitterHandle = follower.twitterHandle
         self.bio = follower.bio

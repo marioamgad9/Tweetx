@@ -17,6 +17,7 @@ public class FollowersListViewModel: ViewModelType {
     
     public struct Input {
         let fetchFollowers = PublishSubject<()>()
+        let followerSelected = PublishSubject<FollowerCellViewModel>()
     }
     
     public struct Output {
@@ -48,6 +49,7 @@ public class FollowersListViewModel: ViewModelType {
         
         // Subscribe to input events
         subscribeForFetchFollowers()
+        subscribeForFollowerSelected()
     }
     
     // MARK: - Internal logic
@@ -66,6 +68,12 @@ public class FollowersListViewModel: ViewModelType {
     private func subscribeForFetchFollowers() {
         input.fetchFollowers.subscribe(onNext: {
             self.loadFollowers()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeForFollowerSelected() {
+        input.followerSelected.subscribe(onNext: {
+            self.followersNavigator.navigate(to: .followerDetails(follower: $0.follower))
         }).disposed(by: disposeBag)
     }
     
