@@ -9,8 +9,8 @@ import Foundation
 
 /// Represents an instance of a user in Twitter
 public struct TwitterUser: Codable {
-    let name: String
-    let twitterHandle: String
-    let bio: String?
-    let profilePicture: String?
+    public let name: String
+    public let twitterHandle: String
+    public let bio: String?
+    public let profilePicture: String?
 }

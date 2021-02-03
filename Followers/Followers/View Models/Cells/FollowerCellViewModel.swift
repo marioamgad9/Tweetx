@@ -1,0 +1,27 @@
+//
+//  FollowerCellViewModel.swift
+//  Followers
+//
+//  Created by Mario Mouris on 03/02/2021.
+//
+
+import TXKit
+
+/// The view model of the FollowerTableViewCell
+class FollowerCellViewModel {
+    
+    // MARK: - Properties
+    let name: String
+    let twitterHandle: String
+    let bio: String?
+    let profilePicture: String?
+    
+    // MARK: - Initializer
+    init(follower: TwitterUser) {
+        self.name = follower.name
+        self.twitterHandle = follower.twitterHandle
+        self.bio = follower.bio
+        self.profilePicture = follower.profilePicture
+    }
+}
+

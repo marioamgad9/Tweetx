@@ -17,6 +17,8 @@
 		42DC08FF25CAD1ED003E8FB7 /* FollowersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */; };
 		42DC090225CAD22C003E8FB7 /* FollowersListRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */; };
 		42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */; };
+		42DC098225CAE61F003E8FB7 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */; };
+		42DC098725CAE633003E8FB7 /* FollowerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewModel.swift; sourceTree = "<group>"; };
 		42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListRootView.swift; sourceTree = "<group>"; };
 		42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
+		42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCellViewModel.swift; sourceTree = "<group>"; };
 		465DD396E51EBE7927C19A63 /* Pods_Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.release.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC08E425CACEDE003E8FB7 /* Controllers */,
+				42DC098025CAE60D003E8FB7 /* Cells */,
 				42DC08E325CACED9003E8FB7 /* State */,
 				42DC08E225CACED4003E8FB7 /* Protocols */,
 				42DC08E125CACECB003E8FB7 /* View Models */,
@@ -84,6 +89,7 @@
 		42DC08E125CACECB003E8FB7 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				42DC098525CAE625003E8FB7 /* Cells */,
 				42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */,
 			);
 			path = "View Models";
@@ -131,6 +137,22 @@
 				42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */,
 			);
 			path = FollowersList;
+			sourceTree = "<group>";
+		};
+		42DC098025CAE60D003E8FB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		42DC098525CAE625003E8FB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DB8FA1B23C8B9D4FF389A35C /* Pods */ = {
@@ -270,8 +292,10 @@
 				42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */,
 				42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */,
 				42DC090225CAD22C003E8FB7 /* FollowersListRootView.swift in Sources */,
+				42DC098725CAE633003E8FB7 /* FollowerCellViewModel.swift in Sources */,
 				42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */,
 				42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */,
+				42DC098225CAE61F003E8FB7 /* FollowerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
