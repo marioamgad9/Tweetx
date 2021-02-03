@@ -51,6 +51,10 @@ public class FollowerDetailsViewController: NiblessViewController {
         rootView.header.backButton.rx.tap.subscribe(onNext: {
             self.navigationController?.popViewController(animated: true)
         }).disposed(by: disposeBag)
+        
+        rootView.navigationBar.backButton.rx.tap.subscribe(onNext: {
+            self.navigationController?.popViewController(animated: true)
+        }).disposed(by: disposeBag)
     }
     
     private func configureTweetsTableView(tableView: UITableView) {
@@ -63,6 +67,7 @@ public class FollowerDetailsViewController: NiblessViewController {
     private func subscribeToFollower() {
         viewModel.output.follower.drive(onNext: {
             self.rootView.header.configure(with: FollowerDetailsHeaderViewModel(follower: $0))
+            self.rootView.navigationBar.configure(with: FollowerDetailsHeaderViewModel(follower: $0))
         }).disposed(by: disposeBag)
     }
     

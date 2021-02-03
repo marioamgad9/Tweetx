@@ -13,9 +13,10 @@ class FollowerDetailsRootView: NiblessView, Loadable {
     
     // MARK: - Views
     var loaderView = LoaderView(style: .transparent, animated: true)
+    let navigationBar = FollowerDetailsNavigationBar()
     let header = FollowerDetailsHeader()
     let tweetsTableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.insetsContentViewsToSafeArea = false
@@ -38,6 +39,14 @@ class FollowerDetailsRootView: NiblessView, Loadable {
             $0.fillSuperview()
         })
         
+        // Add navigation bar
+        add(navigationBar, then: {
+            $0.anchor(.leading(leadingAnchor),
+                      .top(topAnchor),
+                      .trailing(trailingAnchor))
+            $0.setNavigationBarHidden(true, animated: false)
+        })
+        
         // Bring loader to front
         bringSubviewToFront(loaderView)
     }
@@ -51,6 +60,13 @@ class FollowerDetailsRootView: NiblessView, Loadable {
         tweetsTableView.delegate = self
         tweetsTableView.registerCellFromClass(TweetTableViewCell.self)
     }
+    
+    override func safeAreaInsetsDidChange() {
+        tweetsTableView.contentInset = UIEdgeInsets(top: -safeAreaInsets.top,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0)
+    }
 }
 
 // MARK: - Table view delegate
@@ -60,10 +76,15 @@ extension FollowerDetailsRootView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 150
+        return 300
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard header.profilePictureImageView.frame != .zero else {
+            return
+        }
         
+        let profilePictureIsPartiallyVisible = scrollView.bounds.intersects(header.profilePictureImageView.frame)
+        navigationBar.setNavigationBarHidden(profilePictureIsPartiallyVisible, animated: true)
     }
 }

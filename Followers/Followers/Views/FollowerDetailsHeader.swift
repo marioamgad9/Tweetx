@@ -12,7 +12,7 @@ import SDWebImage
 class FollowerDetailsHeader: NiblessView {
     
     // MARK: - Views
-    private let backgroundImageView: UIImageView = {
+    let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -27,7 +27,7 @@ class FollowerDetailsHeader: NiblessView {
         return view
     }()
     
-    private let profilePictureImageView: UIImageView = {
+    let profilePictureImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -90,8 +90,8 @@ class FollowerDetailsHeader: NiblessView {
         add(backButton, then: {
             $0.anchor(.leading(safeAreaLayoutGuide.leadingAnchor, constant: 16),
                       .top(safeAreaLayoutGuide.topAnchor, constant: 16))
-            $0.constrainWidth(40)
             $0.constrainHeight(40)
+            $0.constrainWidth($0.heightAnchor)
         })
         
         // Add profile picture image view
@@ -99,7 +99,7 @@ class FollowerDetailsHeader: NiblessView {
             $0.anchor(.leading(leadingAnchor, constant: 16),
                       .top(backButton.bottomAnchor, constant: 16))
             $0.constrainHeight(90)
-            $0.constrainWidth(90)
+            $0.constrainWidth($0.heightAnchor)
         })
         
         // Add name label
@@ -122,6 +122,7 @@ class FollowerDetailsHeader: NiblessView {
                       .top(handleLabel.bottomAnchor, constant: 8),
                       .trailing(trailingAnchor, constant: -16),
                       .bottom(bottomAnchor, constant: -16))
+            $0.setContentCompressionResistancePriority(.required, for: .vertical)
         })
         
         // Add background image view & overlay
