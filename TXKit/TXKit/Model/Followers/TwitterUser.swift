@@ -14,4 +14,5 @@ public struct TwitterUser: Codable {
     public let twitterHandle: String
     public let bio: String?
     public let profilePicture: String?
+    public let backgroundImage: String?
 }

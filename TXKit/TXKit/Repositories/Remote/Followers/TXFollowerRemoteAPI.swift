@@ -19,9 +19,9 @@ public class TXFollowerRemoteAPI: FollowersRemoteAPI {
         return Promise<[TwitterUser]> { seal in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let mockedValues: [TwitterUser] = [
-                    TwitterUser(id: 0, name: "Marco Polo", twitterHandle: "@marco_polo", bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", profilePicture: "https://i.pinimg.com/originals/80/e3/86/80e3869ea24b00b264ff0b075d1e9384.jpg"),
-                    TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg"),
-                    TwitterUser(id: 0, name: "Loriel Iposion", twitterHandle: "@non_sense", bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", profilePicture: nil)
+                    TwitterUser(id: 0, name: "Marco Polo", twitterHandle: "@marco_polo", bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", profilePicture: "https://i.pinimg.com/originals/80/e3/86/80e3869ea24b00b264ff0b075d1e9384.jpg", backgroundImage: "https://images.squarespace-cdn.com/content/v1/52afda83e4b0cb06a5950857/1531755377169-2CEKOEZRT7K6I1QSGVRM/ke17ZwdGBToddI8pDm48kPTrHXgsMrSIMwe6YW3w1AZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0p52bY8kZn6Mpkp9xtPUVLhvLurswpbKwwoDWqBh58NLxQZMhB36LmtxTXHHtLwR3w/elias-stein-fansided-nba-twitter-pattern.png"),
+                    TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg", backgroundImage: "https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/08/05114542/twitter-followers.png"),
+                    TwitterUser(id: 0, name: "Loriel Iposion", twitterHandle: "@non_sense", bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", profilePicture: nil, backgroundImage: nil)
                 ]
                 seal.fulfill(mockedValues)
             }
