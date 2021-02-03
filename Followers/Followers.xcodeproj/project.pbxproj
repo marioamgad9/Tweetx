@@ -15,6 +15,9 @@
 		42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */; };
 		42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FA25CAD11B003E8FB7 /* FollowersView.swift */; };
 		42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */; };
+		42DC08FF25CAD1ED003E8FB7 /* FollowersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */; };
+		42DC090225CAD22C003E8FB7 /* FollowersListRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */; };
+		42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +44,9 @@
 		42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNavigationController.swift; sourceTree = "<group>"; };
 		42DC08FA25CAD11B003E8FB7 /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
 		42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNavigator.swift; sourceTree = "<group>"; };
+		42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewModel.swift; sourceTree = "<group>"; };
+		42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListRootView.swift; sourceTree = "<group>"; };
+		42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,6 @@
 		42DC08D725CACEAA003E8FB7 /* Followers */ = {
 			isa = PBXGroup;
 			children = (
-				42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */,
 				42DC08E425CACEDE003E8FB7 /* Controllers */,
 				42DC08E325CACED9003E8FB7 /* State */,
 				42DC08E225CACED4003E8FB7 /* Protocols */,
@@ -90,6 +95,7 @@
 		42DC08E125CACECB003E8FB7 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -113,6 +119,8 @@
 		42DC08E425CACEDE003E8FB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */,
+				42DC090025CAD21F003E8FB7 /* FollowersList */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +132,15 @@
 				42DC08E725CACEF8003E8FB7 /* Common.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42DC090025CAD21F003E8FB7 /* FollowersList */ = {
+			isa = PBXGroup;
+			children = (
+				42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */,
+				42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */,
+			);
+			path = FollowersList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,8 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DC08FF25CAD1ED003E8FB7 /* FollowersListViewModel.swift in Sources */,
 				42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */,
 				42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */,
+				42DC090225CAD22C003E8FB7 /* FollowersListRootView.swift in Sources */,
+				42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */,
 				42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
