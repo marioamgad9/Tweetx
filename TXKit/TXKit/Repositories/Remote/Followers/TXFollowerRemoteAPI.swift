@@ -10,6 +10,9 @@ import PromiseKit
 
 public class TXFollowerRemoteAPI: FollowersRemoteAPI {
     
+    // MARK: - Initializer
+    public init() {}
+    
     // MARK: - Methods
     // TODO: - Mocked, provide real implementation
     public func getFollowers() -> Promise<[TwitterUser]> {

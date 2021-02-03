@@ -7,6 +7,7 @@
 
 import Main
 import Followers
+import TXKit
 
 /// The dependency container that holds the dependency graph for the followers flow
 public class FollowersDependencyContainer {
@@ -17,10 +18,12 @@ public class FollowersDependencyContainer {
     // MARK: - Long lived dependencies
     /// The shared coordinator for the followers flow
     weak var sharedFollowersCoordinator: FollowersCoordinator!
+    let sharedFollowersRemoteAPI: FollowersRemoteAPI
     
     // MARK: - Initializer
     init(appDependencyContainer: TXAppDependencyContainer) {
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
+        self.sharedFollowersRemoteAPI = TXFollowerRemoteAPI()
     }
     
     // MARK: - Methods
@@ -34,6 +37,7 @@ public class FollowersDependencyContainer {
     }
     
     func makeFollowersListViewModel() -> FollowersListViewModel {
-        return FollowersListViewModel(followersNavigator: sharedFollowersCoordinator)
+        return FollowersListViewModel(followersRemoteAPI: sharedFollowersRemoteAPI,
+                                      followersNavigator: sharedFollowersCoordinator)
     }
 }

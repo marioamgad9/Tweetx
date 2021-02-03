@@ -38,12 +38,29 @@ public class FollowersListViewController: NiblessViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: - Remove this
-        rootView.showLoaderView()
+        viewModel.input.fetchFollowers.onNext(())
         
         // Subscribe to view model events
-        
+        subscribeToFollowers()
+        subscribeToIsLoading()
+        subscribeToErrorMessages()
         
         // Bind input events to view model
+    }
+    
+    private func subscribeToFollowers() {
+        viewModel.output.followers.drive(onNext: {
+            print("REMOVETHISLOG - Followers received: \($0)")
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeToIsLoading() {
+        viewModel.output.isLoading.drive(onNext: {
+            $0 ? self.rootView.showLoaderView() : self.rootView.hideLoaderView()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeToErrorMessages() {
+        // TODO: - Implement error message presenting
     }
 }
