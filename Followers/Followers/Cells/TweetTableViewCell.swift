@@ -56,7 +56,7 @@ class TweetTableViewCell: NiblessTableViewCell {
     
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.regular(size: .normal, scalable: true)
+        label.font = UIFont.light(size: .small, scalable: true)
         label.textColor = Color.darkestGrey.value
         return label
     }()
@@ -82,8 +82,8 @@ class TweetTableViewCell: NiblessTableViewCell {
         
         // Add time label
         cardView.add(timeLabel, then: {
-            $0.anchor(.trailing(cardView.trailingAnchor, constant: -16))
-            $0.centerYTo(profilePictureImageView.centerYAnchor)
+            $0.anchor(.trailing(cardView.trailingAnchor, constant: -16),
+                      .top(cardView.topAnchor, constant: 16))
         })
         
         // Configure user info stackview
