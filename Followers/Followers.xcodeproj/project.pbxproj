@@ -12,6 +12,9 @@
 		42DC08E925CACEF8003E8FB7 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08E725CACEF8003E8FB7 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42DC08EC25CACEFE003E8FB7 /* TXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EB25CACEFE003E8FB7 /* TXKit.framework */; };
 		42DC08ED25CACEFE003E8FB7 /* TXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EB25CACEFE003E8FB7 /* TXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */; };
+		42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FA25CAD11B003E8FB7 /* FollowersView.swift */; };
+		42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +38,9 @@
 		42DC08D925CACEAA003E8FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42DC08E725CACEF8003E8FB7 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC08EB25CACEFE003E8FB7 /* TXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNavigationController.swift; sourceTree = "<group>"; };
+		42DC08FA25CAD11B003E8FB7 /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
+		42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		42DC08D725CACEAA003E8FB7 /* Followers */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08F525CACF74003E8FB7 /* FollowersNavigationController.swift */,
 				42DC08E425CACEDE003E8FB7 /* Controllers */,
 				42DC08E325CACED9003E8FB7 /* State */,
 				42DC08E225CACED4003E8FB7 /* Protocols */,
@@ -90,6 +97,7 @@
 		42DC08E225CACED4003E8FB7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08FC25CAD146003E8FB7 /* FollowersNavigator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		42DC08E325CACED9003E8FB7 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08FA25CAD11B003E8FB7 /* FollowersView.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 				TargetAttributes = {
 					42DC08D425CACEAA003E8FB7 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -217,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DC08FB25CAD11B003E8FB7 /* FollowersView.swift in Sources */,
+				42DC08FD25CAD146003E8FB7 /* FollowersNavigator.swift in Sources */,
+				42DC08F625CACF74003E8FB7 /* FollowersNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +361,7 @@
 		42DC08DE25CACEAA003E8FB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E35QS8KXV6;
@@ -366,6 +380,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,6 +389,7 @@
 		42DC08DF25CACEAA003E8FB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E35QS8KXV6;
