@@ -20,6 +20,13 @@ class FollowerDetailsHeader: NiblessView {
         return imageView
     }()
     
+    private let backgroundColorOverlay: UIView = {
+        let view = UIView()
+        view.backgroundColor = Color.black.value
+        view.alpha = 0.5
+        return view
+    }()
+    
     // MARK: - Methods
     func configure(with viewModel: FollowerDetailsHeaderViewModel) {
         backgroundImageView.sd_setImage(with: viewModel.backgroundImageURL,
@@ -27,10 +34,17 @@ class FollowerDetailsHeader: NiblessView {
     }
     
     override func configureViewHierarchy() {
-        // Add background image view
+        // Add background image view & overlay
         add(backgroundImageView, then: {
             $0.fillSuperview()
             $0.constrainHeight(150)
+        })
+        
+        add(backgroundColorOverlay, then: {
+            $0.anchor(.leading(backgroundImageView.leadingAnchor),
+                      .top(backgroundImageView.topAnchor),
+                      .trailing(backgroundImageView.trailingAnchor),
+                      .bottom(backgroundImageView.bottomAnchor))
         })
     }
 }
