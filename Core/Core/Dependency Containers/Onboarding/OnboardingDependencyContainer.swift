@@ -34,6 +34,7 @@ public class OnboardingDependencyContainer {
     }
     
     func makeWelcomeViewModel() -> WelcomeViewModel {
-        return WelcomeViewModel(onboardingNavigator: sharedOnboardingCoordinator)
+        return WelcomeViewModel(onboardingNavigator: sharedOnboardingCoordinator,
+                                signedInResponder: sharedMainViewModel)
     }
 }

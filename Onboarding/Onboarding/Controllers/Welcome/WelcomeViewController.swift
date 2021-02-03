@@ -31,8 +31,21 @@ public class WelcomeViewController: NiblessViewController {
         view = rootView
     }
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Binds events to view model
+        bindSignInButtonToViewModel()
+    }
+    
     public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         rootView.animateEntrance()
+    }
+    
+    private func bindSignInButtonToViewModel() {
+        rootView.signInButton.rx.tap.bind(to: viewModel.input.signInButtonTapped).disposed(by: disposeBag)
     }
 }
 

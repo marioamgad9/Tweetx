@@ -20,24 +20,9 @@
 		42DC08B925CA15F4003E8FB7 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */; };
 		42DC08BD25CA1687003E8FB7 /* OnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */; };
 		42DC08EF25CACF11003E8FB7 /* Followers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EE25CACF11003E8FB7 /* Followers.framework */; };
-		42DC08F025CACF11003E8FB7 /* Followers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EE25CACF11003E8FB7 /* Followers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42DC08F925CACFB6003E8FB7 /* FollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08F825CACFB6003E8FB7 /* FollowersCoordinator.swift */; };
 		42DC095725CAD79F003E8FB7 /* FollowersDependencyContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC095625CAD79F003E8FB7 /* FollowersDependencyContainers.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		42DC08F125CACF11003E8FB7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				42DC08F025CACF11003E8FB7 /* Followers.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		42DC06AB25CA0183003E8FB7 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,7 +187,6 @@
 				42DC06A825CA0183003E8FB7 /* Frameworks */,
 				42DC06A925CA0183003E8FB7 /* Resources */,
 				42DC06B725CA019A003E8FB7 /* ShellScript */,
-				42DC08F125CACF11003E8FB7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
