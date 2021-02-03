@@ -29,6 +29,9 @@
       <FileRef
          location = "group:Onboarding/Onboarding.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Followers/Followers.xcodeproj">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

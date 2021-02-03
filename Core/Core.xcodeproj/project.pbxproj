@@ -19,7 +19,23 @@
 		42DC086C25CA12C2003E8FB7 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC086B25CA12C2003E8FB7 /* Onboarding.framework */; };
 		42DC08B925CA15F4003E8FB7 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */; };
 		42DC08BD25CA1687003E8FB7 /* OnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */; };
+		42DC08EF25CACF11003E8FB7 /* Followers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EE25CACF11003E8FB7 /* Followers.framework */; };
+		42DC08F025CACF11003E8FB7 /* Followers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08EE25CACF11003E8FB7 /* Followers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42DC08F125CACF11003E8FB7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				42DC08F025CACF11003E8FB7 /* Followers.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		42DC06AB25CA0183003E8FB7 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +52,7 @@
 		42DC086B25CA12C2003E8FB7 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC08B825CA15F4003E8FB7 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		42DC08BC25CA1687003E8FB7 /* OnboardingDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDependencyContainer.swift; sourceTree = "<group>"; };
+		42DC08EE25CACF11003E8FB7 /* Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +62,7 @@
 			files = (
 				42DC080425CA0DEB003E8FB7 /* Common.framework in Frameworks */,
 				42DC086C25CA12C2003E8FB7 /* Onboarding.framework in Frameworks */,
+				42DC08EF25CACF11003E8FB7 /* Followers.framework in Frameworks */,
 				42DC080B25CA0DF8003E8FB7 /* Main.framework in Frameworks */,
 				42DC080825CA0DF3003E8FB7 /* TXKit.framework in Frameworks */,
 				42DC080E25CA0DFD003E8FB7 /* Launch.framework in Frameworks */,
@@ -105,6 +123,7 @@
 		42DC080225CA0DEB003E8FB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DC08EE25CACF11003E8FB7 /* Followers.framework */,
 				42DC086B25CA12C2003E8FB7 /* Onboarding.framework */,
 				42DC080D25CA0DFD003E8FB7 /* Launch.framework */,
 				42DC080A25CA0DF8003E8FB7 /* Main.framework */,
@@ -161,6 +180,7 @@
 				42DC06A825CA0183003E8FB7 /* Frameworks */,
 				42DC06A925CA0183003E8FB7 /* Resources */,
 				42DC06B725CA019A003E8FB7 /* ShellScript */,
+				42DC08F125CACF11003E8FB7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
