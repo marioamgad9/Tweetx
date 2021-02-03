@@ -62,6 +62,16 @@ class FollowerDetailsHeader: NiblessView {
         return label
     }()
     
+    let backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "ic-back"), for: .normal)
+        button.tintColor = Color.white.value
+        button.backgroundColor = Color.darkestGrey.withAlpha(0.5)
+        button.layer.cornerRadius = 20
+        button.imageEdgeInsets = UIEdgeInsets(top: 12, left: 11, bottom: 12, right: 13)
+        return button
+    }()
+    
     // MARK: - Methods
     func configure(with viewModel: FollowerDetailsHeaderViewModel) {
         backgroundImageView.sd_setImage(with: viewModel.backgroundImageURL,
@@ -76,25 +86,18 @@ class FollowerDetailsHeader: NiblessView {
     }
     
     override func configureViewHierarchy() {
-        // Add background image view & overlay
-        add(backgroundImageView, then: {
-            $0.anchor(.leading(leadingAnchor),
-                      .top(topAnchor),
-                      .trailing(trailingAnchor))
-            $0.constrainHeight(150)
-        })
-        
-        add(backgroundColorOverlay, then: {
-            $0.anchor(.leading(backgroundImageView.leadingAnchor),
-                      .top(backgroundImageView.topAnchor),
-                      .trailing(backgroundImageView.trailingAnchor),
-                      .bottom(backgroundImageView.bottomAnchor))
+        // Add back button
+        add(backButton, then: {
+            $0.anchor(.leading(safeAreaLayoutGuide.leadingAnchor, constant: 16),
+                      .top(safeAreaLayoutGuide.topAnchor, constant: 16))
+            $0.constrainWidth(40)
+            $0.constrainHeight(40)
         })
         
         // Add profile picture image view
         add(profilePictureImageView, then: {
-            $0.anchor(.leading(leadingAnchor, constant: 16))
-            $0.centerYTo(backgroundImageView.bottomAnchor)
+            $0.anchor(.leading(leadingAnchor, constant: 16),
+                      .top(backButton.bottomAnchor, constant: 16))
             $0.constrainHeight(90)
             $0.constrainWidth(90)
         })
@@ -120,6 +123,24 @@ class FollowerDetailsHeader: NiblessView {
                       .trailing(trailingAnchor, constant: -16),
                       .bottom(bottomAnchor, constant: -16))
         })
+        
+        // Add background image view & overlay
+        add(backgroundImageView, then: {
+            $0.anchor(.leading(leadingAnchor),
+                      .top(topAnchor),
+                      .trailing(trailingAnchor),
+                      .bottom(profilePictureImageView.centerYAnchor))
+        })
+        
+        add(backgroundColorOverlay, then: {
+            $0.anchor(.leading(backgroundImageView.leadingAnchor),
+                      .top(backgroundImageView.topAnchor),
+                      .trailing(backgroundImageView.trailingAnchor),
+                      .bottom(backgroundImageView.bottomAnchor))
+        })
+        
+        sendSubviewToBack(backgroundColorOverlay)
+        sendSubviewToBack(backgroundImageView)
     }
     
     override func viewHierarchyDidConfigure() {

@@ -43,7 +43,14 @@ public class FollowerDetailsViewController: NiblessViewController {
         subscribeToIsLoading()
         subscribeToErrorMessages()
         
-        // Bind input events to view model
+        // Bind input events
+        bindBackButton()
+    }
+    
+    private func bindBackButton() {
+        rootView.header.backButton.rx.tap.subscribe(onNext: {
+            self.navigationController?.popViewController(animated: true)
+        }).disposed(by: disposeBag)
     }
     
     private func configureTweetsTableView(tableView: UITableView) {
