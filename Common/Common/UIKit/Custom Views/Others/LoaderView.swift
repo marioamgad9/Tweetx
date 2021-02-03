@@ -88,8 +88,8 @@ public class LoaderView: NiblessView {
         rootStackView.spacing = 8
         
         rootStackView.add(loaderAnimation, then: {
-            $0.constrainHeight(200)
-            $0.constrainWidth(200)
+            $0.constrainHeight(100)
+            $0.constrainWidth(100)
         })
         rootStackView.add(loadingLabel)
         
@@ -109,7 +109,7 @@ public class LoaderView: NiblessView {
             animateEntrance()
         }
         
-        loaderAnimation.play()
+        loaderAnimation.play(fromFrame: 0, toFrame: 50, loopMode: .loop)
         loadingLabel.animateEndlessBlinking()
     }
 }

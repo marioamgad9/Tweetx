@@ -12,13 +12,13 @@ open class TXNavigationController: NiblessNavigationController, UIGestureRecogni
         self.interactivePopGestureRecognizer?.delegate = self
         
         // Setup navigation bar (For view controllers that show it)
-        navigationBar.isTranslucent = true
-        navigationBar.barStyle = .blackTranslucent
+        navigationBar.isTranslucent = false
+        navigationBar.barStyle = .black
+        navigationBar.barTintColor = Color.primary.value
         navigationBar.tintColor = Color.white.value
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Color.white.value,
                                              NSAttributedString.Key.font: UIFont.bold(size: .big)]
         navigationBar.shadowImage = UIImage()
-        navigationBar.backgroundColor = Color.primary.value
         
         // Makes bar button text transparent in navigation bars
         let attributes = [NSAttributedString.Key.font:  UIFont.regular(size: .normal),

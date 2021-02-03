@@ -24,7 +24,6 @@
 		42DC077725CA062E003E8FB7 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42DC077225CA062D003E8FB7 /* SourceSansPro-Bold.ttf */; };
 		42DC077825CA062E003E8FB7 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42DC077325CA062E003E8FB7 /* SourceSansPro-Black.ttf */; };
 		42DC077925CA062E003E8FB7 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42DC077425CA062E003E8FB7 /* SourceSansPro-SemiBold.ttf */; };
-		42DC079F25CA093C003E8FB7 /* twitter-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 42DC079E25CA093C003E8FB7 /* twitter-animation.json */; };
 		42DC07A225CA095F003E8FB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42DC07A425CA095F003E8FB7 /* Localizable.strings */; };
 		42DC081225CA0E21003E8FB7 /* Launch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC081125CA0E21003E8FB7 /* Launch.framework */; };
 		42DC081325CA0E21003E8FB7 /* Launch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC081125CA0E21003E8FB7 /* Launch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -32,6 +31,7 @@
 		42DC087325CA12CC003E8FB7 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC087125CA12CC003E8FB7 /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42DC08F325CACF19003E8FB7 /* Followers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08F225CACF19003E8FB7 /* Followers.framework */; };
 		42DC08F425CACF19003E8FB7 /* Followers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08F225CACF19003E8FB7 /* Followers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42DC096C25CADD02003E8FB7 /* twitter-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 42DC096B25CADD02003E8FB7 /* twitter-animation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,12 +69,12 @@
 		42DC077225CA062D003E8FB7 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		42DC077325CA062E003E8FB7 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		42DC077425CA062E003E8FB7 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
-		42DC079E25CA093C003E8FB7 /* twitter-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "twitter-animation.json"; sourceTree = "<group>"; };
 		42DC07A325CA095F003E8FB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42DC07A525CA097E003E8FB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42DC081125CA0E21003E8FB7 /* Launch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Launch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC087125CA12CC003E8FB7 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC08F225CACF19003E8FB7 /* Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DC096B25CADD02003E8FB7 /* twitter-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "twitter-animation.json"; sourceTree = "<group>"; };
 		CC4C8CA7EE2F0FC3EBA7FF0D /* Pods-Tweetx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.debug.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.debug.xcconfig"; sourceTree = "<group>"; };
 		D9BB44C9FACC88CBCFE0DE22 /* Pods-Tweetx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetx.release.xcconfig"; path = "Target Support Files/Pods-Tweetx/Pods-Tweetx.release.xcconfig"; sourceTree = "<group>"; };
 		F946BB4DDF8322989CECB4B8 /* Pods_Tweetx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +169,7 @@
 		42DC079D25CA08CC003E8FB7 /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
-				42DC079E25CA093C003E8FB7 /* twitter-animation.json */,
+				42DC096B25CADD02003E8FB7 /* twitter-animation.json */,
 			);
 			path = "Lottie Animations";
 			sourceTree = "<group>";
@@ -244,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DC096C25CADD02003E8FB7 /* twitter-animation.json in Resources */,
 				42DC063025C9FBFA003E8FB7 /* LaunchScreen.storyboard in Resources */,
 				42DC062D25C9FBFA003E8FB7 /* Assets.xcassets in Resources */,
 				42DC077725CA062E003E8FB7 /* SourceSansPro-Bold.ttf in Resources */,
@@ -251,7 +252,6 @@
 				42DC07A225CA095F003E8FB7 /* Localizable.strings in Resources */,
 				42DC077825CA062E003E8FB7 /* SourceSansPro-Black.ttf in Resources */,
 				42DC077625CA062E003E8FB7 /* SourceSansPro-Light.ttf in Resources */,
-				42DC079F25CA093C003E8FB7 /* twitter-animation.json in Resources */,
 				42DC077925CA062E003E8FB7 /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

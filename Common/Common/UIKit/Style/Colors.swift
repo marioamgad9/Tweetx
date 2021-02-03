@@ -9,6 +9,7 @@ public enum Color {
     case darkestGrey
     case lightGrey
     case lightestGrey
+    case offWhite
     case white
     case custom(hexString: String)
     
@@ -35,6 +36,8 @@ extension Color {
             instanceColor = UIColor(hexString: "#696969")
         case .lightestGrey:
             instanceColor = UIColor(hexString: "#D3D1D1")
+        case .offWhite:
+            instanceColor = UIColor(hexString: "#EFEFEF")
         case .white:
             instanceColor = UIColor(hexString: "#ffffff")
         case .custom(let hexValue):

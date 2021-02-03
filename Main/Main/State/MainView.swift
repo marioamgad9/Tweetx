@@ -11,5 +11,5 @@ import Foundation
 public enum MainView {
     case launching
     case onboarding
-    case signedIn
+    case followers
 }

@@ -51,7 +51,7 @@ public class LaunchViewModel: ViewModelType {
     private func loadUserSession() {
         // TODO: - Implement auth check logic
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.notSignedInResponder.notSignedIn()
+            self.signedInResponder.signedIn(with: AuthTokens.dummyValue())
         }
     }
     

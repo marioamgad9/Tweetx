@@ -10,6 +10,7 @@ import Common
 import Followers
 
 typealias FollowersVcFactory = () -> FollowersNavigationController
+typealias FollowersListVcFactory = () -> FollowersListViewController
 
 /**
  The coordinator that handles the followers navigation.
@@ -28,12 +29,15 @@ public class FollowersCoordinator: NSObject, Coordinator {
     
     // Factories
     private let followersVcFactory: FollowersVcFactory
+    private let followersListVcFactory: FollowersListVcFactory
     
     // MARK: - Initializer
     init(rootVc: NiblessViewController,
-         followersVcFactory: @escaping FollowersVcFactory) {
+         followersVcFactory: @escaping FollowersVcFactory,
+         followersListVcFactory: @escaping FollowersListVcFactory) {
         self.rootVc = rootVc
         self.followersVcFactory = followersVcFactory
+        self.followersListVcFactory = followersListVcFactory
     }
     
     // MARK: - Methods
@@ -43,6 +47,7 @@ public class FollowersCoordinator: NSObject, Coordinator {
         rootVc.addFullScreen(childViewController: followersVc)
         navigate(to: .followersList)
         isStarted = true
+        completionHandler?()
     }
     
     /// Finishes the flow started if it can finish
@@ -53,7 +58,8 @@ public class FollowersCoordinator: NSObject, Coordinator {
     
     /// Navigates to the followers list view
     func goToFollowersListView() {
-        
+        let followersListVc = followersListVcFactory()
+        followersVc.pushViewController(followersListVc, animated: false)
     }
 }
 

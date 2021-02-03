@@ -22,4 +22,9 @@ public struct AuthTokens: Codable {
         self.refresh = refresh
         self.access = access
     }
+    
+    // TODO: - Dummy, remove this. Used for initial testing
+    public static func dummyValue() -> AuthTokens {
+        return AuthTokens(refresh: "", access: "")
+    }
 }

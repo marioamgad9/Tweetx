@@ -27,6 +27,6 @@ class FollowersListRootView: NiblessView, Loadable {
     
     override func viewHierarchyDidConfigure() {
         // Set background color
-        backgroundColor = .blue
+        backgroundColor = Color.offWhite.value
     }
 }

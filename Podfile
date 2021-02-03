@@ -1,3 +1,5 @@
+platform :ios, '12.1'
+
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
@@ -65,6 +67,15 @@ target 'Onboarding' do
     project 'Onboarding/Onboarding'
     
     reactivePods
+end
+
+target 'Followers' do
+    project 'Followers/Followers'
+    
+    reactivePods
+    
+    # Pod for SDWebImage
+    pod 'SDWebImage', '~> 5.0'
 end
 
 # Post install

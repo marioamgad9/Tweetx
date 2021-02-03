@@ -22,7 +22,7 @@ public class MainViewModel: SignedInResponder, NotSignedInResponder {
     }
     
     public func signedIn(with tokens: AuthTokens) {
-        mainNavigator.navigate(to: .signedIn)
+        mainNavigator.navigate(to: .followers)
     }
     
     public func notSignedIn() {

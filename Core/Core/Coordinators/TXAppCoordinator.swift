@@ -11,6 +11,7 @@ import Main
 typealias MainVcFactory = () -> MainViewController
 typealias LaunchCoordinatorFactory = () -> LaunchCoordinator
 typealias OnboardingCoordinatorFactory = () -> OnboardingCoordinator
+typealias FollowersCoordinatorFactory = () -> FollowersCoordinator
 
 /**
  Handles coordination between the main app states (LaunchView, OnboardingView, etc...)
@@ -25,19 +26,23 @@ public class TXAppCoordinator: Coordinator {
     // Child coordinators
     public private(set) var launchCoordinator: LaunchCoordinator!
     public private(set) var onboardingCoordinator: OnboardingCoordinator!
+    public private(set) var followersCoordinator: FollowersCoordinator!
     
     // MARK: - Factories
     private let mainVcFactory: MainVcFactory
     private let launchCoordinatorFactory: LaunchCoordinatorFactory
     private let onboardingCoordinatorFactory: OnboardingCoordinatorFactory
+    private let followersCoordinatorFactory: FollowersCoordinatorFactory
     
     // MARK: - Initializer
     init(mainVcFactory: @escaping MainVcFactory,
          launchCoordinatorFactory: @escaping LaunchCoordinatorFactory,
-         onboardingCoordinatorFactory: @escaping OnboardingCoordinatorFactory) {
+         onboardingCoordinatorFactory: @escaping OnboardingCoordinatorFactory,
+         followersCoordinatorFactory: @escaping FollowersCoordinatorFactory) {
         self.mainVcFactory = mainVcFactory
         self.launchCoordinatorFactory = launchCoordinatorFactory
         self.onboardingCoordinatorFactory = onboardingCoordinatorFactory
+        self.followersCoordinatorFactory = followersCoordinatorFactory
     }
     
     // MARK: - Methods
@@ -57,15 +62,20 @@ public class TXAppCoordinator: Coordinator {
     
     /// Navigates to the welcome view
     func goToOnboardingView() {
-//        signedInCoordinator?.finish()
+        followersCoordinator?.finish()
         onboardingCoordinator = onboardingCoordinatorFactory()
         onboardingCoordinator.start() {
             self.launchCoordinator?.finish()
         }
     }
     
-    /// Navigates to the signedin view
-    func goToSignedInView() {
+    /// Navigates to the followers view
+    func goToFollowersView() {
+        onboardingCoordinator?.finish()
+        followersCoordinator = followersCoordinatorFactory()
+        followersCoordinator.start() {
+            self.launchCoordinator?.finish()
+        }
     }
 }
 
@@ -77,8 +87,8 @@ extension TXAppCoordinator: MainNavigator {
             goToLaunchView()
         case .onboarding:
             goToOnboardingView()
-        case .signedIn:
-            goToSignedInView()
+        case .followers:
+            goToFollowersView()
         }
     }
 }

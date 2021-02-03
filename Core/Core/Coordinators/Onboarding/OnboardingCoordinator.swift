@@ -48,6 +48,7 @@ public class OnboardingCoordinator: NSObject, Coordinator {
         rootVc.addFullScreen(childViewController: onboardingVc)
         navigate(to: .welcome)
         isStarted = true
+        completionHandler?()
     }
     
     /// Finishes the flow started if it can finish

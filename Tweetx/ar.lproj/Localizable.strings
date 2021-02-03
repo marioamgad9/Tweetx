@@ -23,3 +23,7 @@
 // MARK: Welcome screen
 "label.slogan" = "مرحباً بك في ابسط مشغل تويتر";
 "btn.sign_in" = "تسجيل دخول بأستخدام تويتر";
+
+// MARK: - Followers Flow ------
+// MARK: Followers list screen
+"title.followers_list" = "متابعيني";

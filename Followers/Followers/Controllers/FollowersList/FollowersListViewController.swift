@@ -25,6 +25,8 @@ public class FollowersListViewController: NiblessViewController {
     public init(viewModel: FollowersListViewModel) {
         self.viewModel = viewModel
         super.init()
+        
+        title = "title.followers_list".localized
     }
     
     // MARK: - Methods

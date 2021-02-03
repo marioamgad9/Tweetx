@@ -9,4 +9,12 @@ import UIKit
 import Common
 
 /// The parent navigation controller for the followers flow
-public class FollowersNavigationController: TXNavigationController {}
+public class FollowersNavigationController: TXNavigationController {
+
+    // MARK: - Methods
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        isNavigationBarHidden = false
+    }
+}

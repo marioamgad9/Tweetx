@@ -23,3 +23,7 @@
 // MARK: Welcome screen
 "label.slogan" = "Welcome to the simplest Twiter Client ever";
 "btn.sign_in" = "SIGN IN USING TWITTER";
+
+// MARK: - Followers Flow ------
+// MARK: Followers list screen
+"title.followers_list" = "My Followers";

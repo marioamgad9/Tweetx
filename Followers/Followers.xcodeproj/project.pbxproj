@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BDEFF878240384194E0E60F /* Pods_Followers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465DD396E51EBE7927C19A63 /* Pods_Followers.framework */; };
 		42DC08DA25CACEAA003E8FB7 /* Followers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42DC08D825CACEAA003E8FB7 /* Followers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42DC08E825CACEF8003E8FB7 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08E725CACEF8003E8FB7 /* Common.framework */; };
 		42DC08E925CACEF8003E8FB7 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC08E725CACEF8003E8FB7 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		136D50465C7A7A3DF5786095 /* Pods-Followers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.debug.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.debug.xcconfig"; sourceTree = "<group>"; };
 		42DC08D525CACEAA003E8FB7 /* Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC08D825CACEAA003E8FB7 /* Followers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Followers.h; sourceTree = "<group>"; };
 		42DC08D925CACEAA003E8FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		42DC08FE25CAD1ED003E8FB7 /* FollowersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewModel.swift; sourceTree = "<group>"; };
 		42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListRootView.swift; sourceTree = "<group>"; };
 		42DC090325CAD299003E8FB7 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
+		465DD396E51EBE7927C19A63 /* Pods_Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.release.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			files = (
 				42DC08E825CACEF8003E8FB7 /* Common.framework in Frameworks */,
 				42DC08EC25CACEFE003E8FB7 /* TXKit.framework in Frameworks */,
+				0BDEFF878240384194E0E60F /* Pods_Followers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,7 @@
 				42DC08D725CACEAA003E8FB7 /* Followers */,
 				42DC08D625CACEAA003E8FB7 /* Products */,
 				42DC08E625CACEF8003E8FB7 /* Frameworks */,
+				DB8FA1B23C8B9D4FF389A35C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +136,7 @@
 			children = (
 				42DC08EB25CACEFE003E8FB7 /* TXKit.framework */,
 				42DC08E725CACEF8003E8FB7 /* Common.framework */,
+				465DD396E51EBE7927C19A63 /* Pods_Followers.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +148,16 @@
 				42DC090125CAD22C003E8FB7 /* FollowersListRootView.swift */,
 			);
 			path = FollowersList;
+			sourceTree = "<group>";
+		};
+		DB8FA1B23C8B9D4FF389A35C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				136D50465C7A7A3DF5786095 /* Pods-Followers.debug.xcconfig */,
+				E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42DC08DD25CACEAA003E8FB7 /* Build configuration list for PBXNativeTarget "Followers" */;
 			buildPhases = (
+				197F6BDCF8C77B2EC1C20DED /* [CP] Check Pods Manifest.lock */,
 				42DC08D025CACEAA003E8FB7 /* Headers */,
 				42DC08D125CACEAA003E8FB7 /* Sources */,
 				42DC08D225CACEAA003E8FB7 /* Frameworks */,
@@ -220,6 +238,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		197F6BDCF8C77B2EC1C20DED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Followers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		42DC08E525CACEEE003E8FB7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +420,7 @@
 		};
 		42DC08DE25CACEAA003E8FB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 136D50465C7A7A3DF5786095 /* Pods-Followers.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +449,7 @@
 		};
 		42DC08DF25CACEAA003E8FB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
