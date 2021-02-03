@@ -47,10 +47,10 @@ public class FollowerDetailsViewController: NiblessViewController {
     }
     
     private func configureTweetsTableView(tableView: UITableView) {
-//        viewModel.output.tweets.drive(tableView.rx.items(cellIdentifier: TweetTableViewCell.reuseIdentifier,
-//                                                        cellType: TweetTableViewCell.self)) { (_, tweet, cell) in
-//            cell.configure(with: user)
-//        }.disposed(by: disposeBag)
+        viewModel.output.tweets.drive(tableView.rx.items(cellIdentifier: TweetTableViewCell.reuseIdentifier,
+                                                        cellType: TweetTableViewCell.self)) { (_, tweet, cell) in
+            cell.configure(with: tweet)
+        }.disposed(by: disposeBag)
     }
     
     private func subscribeToFollower() {

@@ -49,6 +49,7 @@ class FollowerDetailsRootView: NiblessView, Loadable {
     
     private func configureTableViews() {
         tweetsTableView.delegate = self
+        tweetsTableView.registerCellFromClass(TweetTableViewCell.self)
     }
 }
 

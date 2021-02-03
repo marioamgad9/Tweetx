@@ -25,6 +25,8 @@
 		42DC09A325CB0130003E8FB7 /* FollowersStateResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09A225CB0130003E8FB7 /* FollowersStateResponder.swift */; };
 		42DC09A725CB02F0003E8FB7 /* FollowerDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09A625CB02F0003E8FB7 /* FollowerDetailsHeader.swift */; };
 		42DC09AC25CB03F7003E8FB7 /* FollowerDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09AB25CB03F7003E8FB7 /* FollowerDetailsHeaderViewModel.swift */; };
+		42DC09B025CB0668003E8FB7 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09AF25CB0668003E8FB7 /* TweetTableViewCell.swift */; };
+		42DC09B325CB06BB003E8FB7 /* TweetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC09B225CB06BB003E8FB7 /* TweetCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		42DC09A225CB0130003E8FB7 /* FollowersStateResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersStateResponder.swift; sourceTree = "<group>"; };
 		42DC09A625CB02F0003E8FB7 /* FollowerDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsHeader.swift; sourceTree = "<group>"; };
 		42DC09AB25CB03F7003E8FB7 /* FollowerDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		42DC09AF25CB0668003E8FB7 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		42DC09B225CB06BB003E8FB7 /* TweetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellViewModel.swift; sourceTree = "<group>"; };
 		465DD396E51EBE7927C19A63 /* Pods_Followers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Followers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11A993ED2937395B5040A34 /* Pods-Followers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Followers.release.xcconfig"; path = "Target Support Files/Pods-Followers/Pods-Followers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC098125CAE61F003E8FB7 /* FollowerTableViewCell.swift */,
+				42DC09AF25CB0668003E8FB7 /* TweetTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC098625CAE633003E8FB7 /* FollowerCellViewModel.swift */,
+				42DC09B225CB06BB003E8FB7 /* TweetCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				42DC09A325CB0130003E8FB7 /* FollowersStateResponder.swift in Sources */,
 				42DC098725CAE633003E8FB7 /* FollowerCellViewModel.swift in Sources */,
 				42DC099C25CAF9B0003E8FB7 /* FollowerDetailsRootView.swift in Sources */,
+				42DC09B325CB06BB003E8FB7 /* TweetCellViewModel.swift in Sources */,
+				42DC09B025CB0668003E8FB7 /* TweetTableViewCell.swift in Sources */,
 				42DC090425CAD299003E8FB7 /* FollowersListViewController.swift in Sources */,
 				42DC099F25CAF9FA003E8FB7 /* FollowerDetailsViewController.swift in Sources */,
 				42DC09A725CB02F0003E8FB7 /* FollowerDetailsHeader.swift in Sources */,

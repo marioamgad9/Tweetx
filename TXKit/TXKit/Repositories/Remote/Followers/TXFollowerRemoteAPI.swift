@@ -32,10 +32,10 @@ public class TXFollowerRemoteAPI: FollowersRemoteAPI {
         return Promise<[Tweet]> { seal in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let mockedValues = [
-                    Tweet(id: 0, content: "This is a tweet I wrote", time: Date(), userId: 1),
-                    Tweet(id: 1, content: "Gismo bimbo. Another tweet by the same user. This is a tweet I wrote", time: Date(), userId: 1),
-                    Tweet(id: 1, content: "Hey there", time: Date(), userId: 1),
-                    Tweet(id: 1, content: "Another tweet by the same user. This is a tweet I wrote", time: Date(), userId: 1),
+                    Tweet(id: 0, content: "This is a tweet I wrote", time: Date(), user: TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg", backgroundImage: "https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/08/05114542/twitter-followers.png")),
+                    Tweet(id: 1, content: "Gismo bimbo. Another tweet by the same user. This is a tweet I wrote", time: Date(), user: TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg", backgroundImage: "https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/08/05114542/twitter-followers.png")),
+                    Tweet(id: 1, content: "Hey there", time: Date(), user: TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg", backgroundImage: "https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/08/05114542/twitter-followers.png")),
+                    Tweet(id: 1, content: "Another tweet by the same user. This is a tweet I wrote", time: Date(), user: TwitterUser(id: 0, name: "Santa Open", twitterHandle: "@santa_baby", bio: nil, profilePicture: "https://www.sabrillu.com/wp-content/uploads/2019/10/Weronika-vorschau.jpg", backgroundImage: "https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/08/05114542/twitter-followers.png")),
                 ]
                 seal.fulfill(mockedValues)
             }

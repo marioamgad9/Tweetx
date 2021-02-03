@@ -11,5 +11,5 @@ public struct Tweet: Codable {
     public let id: Int
     public let content: String
     public let time: Date
-    public let userId: Int
+    public let user: TwitterUser
 }
