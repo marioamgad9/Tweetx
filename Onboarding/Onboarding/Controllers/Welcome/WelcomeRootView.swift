@@ -138,4 +138,3 @@ extension WelcomeRootView {
         }, completion: nil)
     }
 }
-

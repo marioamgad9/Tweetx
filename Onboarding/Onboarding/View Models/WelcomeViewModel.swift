@@ -16,35 +16,59 @@ public class WelcomeViewModel: ViewModelType {
     public var output: WelcomeViewModel.Output
     
     public struct Input {
-        let signInButtonTapped = PublishSubject<()>()
+        let signInButtonTapped = PublishSubject<UIViewController>()
     }
     
-    public struct Output {}
+    public struct Output {
+        let isLoading: Driver<Bool>
+        let errorMessage: Driver<ErrorMessage>
+    }
     
     // MARK: - Properties
-    private var onboardingNavigator: OnboardingNavigator
+    private let userSessionRepository: UserSessionRepository
+    private let onboardingNavigator: OnboardingNavigator
     private let signedInResponder: SignedInResponder
     private let disposeBag = DisposeBag()
     
+    // MARK: - Subjects
+    private let isLoadingSubject = BehaviorSubject<Bool>(value: false)
+    private let errorMessageSubject = PublishSubject<ErrorMessage>()
+    
     // MARK: - Initializer
-    public init(onboardingNavigator: OnboardingNavigator,
+    public init(userSessionRepository: UserSessionRepository,
+                onboardingNavigator: OnboardingNavigator,
                 signedInResponder: SignedInResponder) {
+        self.userSessionRepository = userSessionRepository
         self.onboardingNavigator = onboardingNavigator
         self.signedInResponder = signedInResponder
         
         // Configure input & output
         input = Input()
-        output = Output()
+        output = Output(isLoading: isLoadingSubject.asDriver(onErrorJustReturn: false),
+                        errorMessage: errorMessageSubject.asDriver { _ in fatalError() })
         
         // Subscribe to input events
         subscribeForSignInButtonTapped()
     }
     
+    // MARK: - Internal logic
+    private func signIn(viewController: UIViewController) {
+        userSessionRepository.signInWithTwitter(viewController: viewController).done { (userID) in
+            self.signedInResponder.signedIn(with: userID)
+        }
+        .catch(handleError)
+    }
+    
     // MARK: - Input events subscription
     private func subscribeForSignInButtonTapped() {
         input.signInButtonTapped.subscribe(onNext: {
-            // TODO: - Implement actual sign in logic first
-            self.signedInResponder.signedIn(with: AuthTokens.dummyValue())
+            self.signIn(viewController: $0)
         }).disposed(by: disposeBag)
+    }
+    
+    // MARK: - Error handling
+    private func handleError(_ error: Error) {
+        errorMessageSubject.onNext(ErrorMessage(title: "error_title.unexpected_error".localized,
+                                                message: "error_message.unexpected_error".localized))
     }
 }

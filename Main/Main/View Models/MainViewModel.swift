@@ -21,7 +21,7 @@ public class MainViewModel: SignedInResponder, NotSignedInResponder {
         self.mainNavigator = mainNavigator
     }
     
-    public func signedIn(with tokens: AuthTokens) {
+    public func signedIn(with userID: String) {
         mainNavigator.navigate(to: .followers)
     }
     

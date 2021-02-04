@@ -9,5 +9,5 @@ import Foundation
 
 /// A way to communicate between the repository and the views that the user is now signed in
 public protocol SignedInResponder {
-    func signedIn(with tokens: AuthTokens)
+    func signedIn(with userID: String)
 }

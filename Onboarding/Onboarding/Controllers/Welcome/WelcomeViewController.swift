@@ -45,7 +45,9 @@ public class WelcomeViewController: NiblessViewController {
     }
     
     private func bindSignInButtonToViewModel() {
-        rootView.signInButton.rx.tap.bind(to: viewModel.input.signInButtonTapped).disposed(by: disposeBag)
+        rootView.signInButton.rx.tap.bind(onNext: {
+            self.viewModel.input.signInButtonTapped.onNext(self)
+        }).disposed(by: disposeBag)
     }
 }
 

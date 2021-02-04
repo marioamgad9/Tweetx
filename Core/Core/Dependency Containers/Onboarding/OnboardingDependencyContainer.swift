@@ -7,6 +7,7 @@
 
 import Main
 import Onboarding
+import TXKit
 
 /// The dependency container that holds the dependency graph for the onboarding flow
 public class OnboardingDependencyContainer {
@@ -18,9 +19,26 @@ public class OnboardingDependencyContainer {
     /// The shared coordinator for the onboarding flow
     weak var sharedOnboardingCoordinator: OnboardingCoordinator!
     
+    /// The shared repository that handles user authentication
+    let sharedUserSessionRepository: UserSessionRepository
+    
     // MARK: - Initializer
     init(appDependencyContainer: TXAppDependencyContainer) {
+        func makeUserSessionRepository() -> UserSessionRepository {
+            return TXUserSessionRepository(dataStore: makeUserSessionDataStore(),
+                                           remoteAPI: makeAuthRemoteAPI())
+        }
+        
+        func makeUserSessionDataStore() -> UserSessionDataStore {
+            return TXUserSessionDataStore()
+        }
+        
+        func makeAuthRemoteAPI() -> AuthRemoteAPI {
+            return TXAuthRemoteAPI()
+        }
+        
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
+        self.sharedUserSessionRepository = makeUserSessionRepository()
     }
     
     // MARK: - Methods
@@ -34,7 +52,8 @@ public class OnboardingDependencyContainer {
     }
     
     func makeWelcomeViewModel() -> WelcomeViewModel {
-        return WelcomeViewModel(onboardingNavigator: sharedOnboardingCoordinator,
+        return WelcomeViewModel(userSessionRepository: sharedUserSessionRepository,
+                                onboardingNavigator: sharedOnboardingCoordinator,
                                 signedInResponder: sharedMainViewModel)
     }
 }
