@@ -12,6 +12,7 @@ public enum TXKitError: Error {
     // MARK: - Internal errors
     case keychainError
     case noInternet
+    case noUserIDFound
     
     // MARK: - API errors
     case badAPIRequest

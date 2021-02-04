@@ -23,6 +23,9 @@
 		42E707ED25CC1154005A6D04 /* TXAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E707EC25CC1154005A6D04 /* TXAuthRemoteAPI.swift */; };
 		42E707F125CC1229005A6D04 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E707F025CC1229005A6D04 /* NetworkConstants.swift */; };
 		42E707F425CC133F005A6D04 /* TwitterKeysProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E707F325CC133F005A6D04 /* TwitterKeysProvider.swift */; };
+		42E707FC25CC177F005A6D04 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E707FB25CC177F005A6D04 /* UserSessionRepository.swift */; };
+		42E7080025CC17B8005A6D04 /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E707FF25CC17B8005A6D04 /* UserSessionDataStore.swift */; };
+		42E7080325CC17ED005A6D04 /* TXUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7080225CC17ED005A6D04 /* TXUserSessionDataStore.swift */; };
 		AE06147F1CA83A19E8495FC4 /* Pods_TXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EF729499D8329E2550D8CE /* Pods_TXKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		42E707EC25CC1154005A6D04 /* TXAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXAuthRemoteAPI.swift; sourceTree = "<group>"; };
 		42E707F025CC1229005A6D04 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		42E707F325CC133F005A6D04 /* TwitterKeysProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterKeysProvider.swift; sourceTree = "<group>"; };
+		42E707FB25CC177F005A6D04 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		42E707FF25CC17B8005A6D04 /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
+		42E7080225CC17ED005A6D04 /* TXUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXUserSessionDataStore.swift; sourceTree = "<group>"; };
 		CE41C8890AD1D60480D664BF /* Pods-TXKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXKit.debug.xcconfig"; path = "Target Support Files/Pods-TXKit/Pods-TXKit.debug.xcconfig"; sourceTree = "<group>"; };
 		F9EF729499D8329E2550D8CE /* Pods_TXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +174,7 @@
 		42DC097425CAE173003E8FB7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				42E707F925CC1763005A6D04 /* Repos */,
 				42DC097625CAE188003E8FB7 /* Remote */,
 				42DC097525CAE180003E8FB7 /* Persistence */,
 			);
@@ -177,6 +184,7 @@
 		42DC097525CAE180003E8FB7 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				42E707FE25CC17AB005A6D04 /* UserSessionDataStore */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -215,6 +223,31 @@
 				42E707F325CC133F005A6D04 /* TwitterKeysProvider.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		42E707F925CC1763005A6D04 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				42E707FA25CC1768005A6D04 /* UserSessionRepository */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		42E707FA25CC1768005A6D04 /* UserSessionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				42E707FB25CC177F005A6D04 /* UserSessionRepository.swift */,
+			);
+			path = UserSessionRepository;
+			sourceTree = "<group>";
+		};
+		42E707FE25CC17AB005A6D04 /* UserSessionDataStore */ = {
+			isa = PBXGroup;
+			children = (
+				42E707FF25CC17B8005A6D04 /* UserSessionDataStore.swift */,
+				42E7080225CC17ED005A6D04 /* TXUserSessionDataStore.swift */,
+			);
+			path = UserSessionDataStore;
 			sourceTree = "<group>";
 		};
 		B3DEA0F8F0D4CCBA73E9AE8C /* Pods */ = {
@@ -354,7 +387,9 @@
 				42E707ED25CC1154005A6D04 /* TXAuthRemoteAPI.swift in Sources */,
 				42E707DB25CC10D3005A6D04 /* AuthRemoteAPI.swift in Sources */,
 				42DC082F25CA0ED0003E8FB7 /* ErrorMessage.swift in Sources */,
+				42E707FC25CC177F005A6D04 /* UserSessionRepository.swift in Sources */,
 				42DC099725CAF2FA003E8FB7 /* Tweet.swift in Sources */,
+				42E7080325CC17ED005A6D04 /* TXUserSessionDataStore.swift in Sources */,
 				42DC097125CAE0F8003E8FB7 /* TwitterUser.swift in Sources */,
 				42DC072E25CA0462003E8FB7 /* AuthTokens.swift in Sources */,
 				42DC070B25CA0373003E8FB7 /* SignedInResponder.swift in Sources */,
@@ -364,6 +399,7 @@
 				42DC097A25CAE1B7003E8FB7 /* FollowersRemoteAPI.swift in Sources */,
 				42E707F425CC133F005A6D04 /* TwitterKeysProvider.swift in Sources */,
 				42DC070E25CA037E003E8FB7 /* NotSignedInResponder.swift in Sources */,
+				42E7080025CC17B8005A6D04 /* UserSessionDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
