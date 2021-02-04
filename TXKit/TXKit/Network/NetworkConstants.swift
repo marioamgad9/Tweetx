@@ -8,12 +8,12 @@
 import Foundation
 
 /// Holds all the constants related to networking
-struct NetworkConstants {
+public struct NetworkConstants {
     
     /// Twitter constants (
-    struct TwitterConstants {
+    public struct TwitterConstants {
         static let consumerKey = TwitterKeysProvider.consumerKey
         static let consumerSecretKey = TwitterKeysProvider.consumerSecretKey
-        static let callbackURL = URL(string: "tweetxsignin://")!
+        public static let callbackURL = URL(string: "tweetxsignin://")!
     }
 }

@@ -8,6 +8,8 @@
 import UIKit
 import Common
 import Core
+import TXKit
+import Swifter
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Start coordinator
         coordinator?.start()
+        
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Twitter
+        Swifter.handleOpenURL(url, callbackURL: NetworkConstants.TwitterConstants.callbackURL)
         
         return true
     }
