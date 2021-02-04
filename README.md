@@ -34,6 +34,13 @@ Setup the workspace using:
 $ pod install
 ```
 
+Also please provide a struct/class named **TwitterKeysProvider** inside TXKit module like the following:
+```
+struct TwitterKeysProvider {
+    static let consumerKey = "YOUR_CONSUMER_KEY"
+    static let consumerSecretKey = "YOUR_SECRET_KEY"
+}
+```
 
 ## Author
 Mario Mouris, mario@mariomouris.me
