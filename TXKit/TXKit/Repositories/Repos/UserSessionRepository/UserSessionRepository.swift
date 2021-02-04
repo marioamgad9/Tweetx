@@ -12,4 +12,5 @@ import PromiseKit
 public protocol UserSessionRepository {
     func getUserID() -> Promise<String>
     func signInWithTwitter(viewController: UIViewController) -> Promise<String>
+    func signOut() -> Promise<()>
 }

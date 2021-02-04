@@ -34,4 +34,8 @@ public class TXUserSessionRepository: NSObject, UserSessionRepository {
             }.catch { seal.reject($0) }
         }
     }
+    
+    public func signOut() -> Promise<()> {
+        return dataStore.deleteUserID()
+    }
 }
