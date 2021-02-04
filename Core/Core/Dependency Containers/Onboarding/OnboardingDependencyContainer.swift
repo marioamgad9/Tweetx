@@ -24,21 +24,8 @@ public class OnboardingDependencyContainer {
     
     // MARK: - Initializer
     init(appDependencyContainer: TXAppDependencyContainer) {
-        func makeUserSessionRepository() -> UserSessionRepository {
-            return TXUserSessionRepository(dataStore: makeUserSessionDataStore(),
-                                           remoteAPI: makeAuthRemoteAPI())
-        }
-        
-        func makeUserSessionDataStore() -> UserSessionDataStore {
-            return TXUserSessionDataStore()
-        }
-        
-        func makeAuthRemoteAPI() -> AuthRemoteAPI {
-            return TXAuthRemoteAPI()
-        }
-        
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
-        self.sharedUserSessionRepository = makeUserSessionRepository()
+        self.sharedUserSessionRepository = appDependencyContainer.sharedUserSessionRepository
     }
     
     // MARK: - Methods

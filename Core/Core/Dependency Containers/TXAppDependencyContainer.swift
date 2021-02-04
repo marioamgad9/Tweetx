@@ -8,6 +8,7 @@
 import Foundation
 import Main
 import Launch
+import TXKit
 
 /**
  The root dependency container that contains the whole dependency graph for the app.
@@ -26,9 +27,25 @@ public class TXAppDependencyContainer {
         return makeMainViewModel()
     }()
     
+    /// The shared repository that handles user authentication
+    let sharedUserSessionRepository: UserSessionRepository
+    
     // MARK: - Initializer
     public init() {
+        func makeUserSessionRepository() -> UserSessionRepository {
+            return TXUserSessionRepository(dataStore: makeUserSessionDataStore(),
+                                           remoteAPI: makeAuthRemoteAPI())
+        }
         
+        func makeUserSessionDataStore() -> UserSessionDataStore {
+            return TXUserSessionDataStore()
+        }
+        
+        func makeAuthRemoteAPI() -> AuthRemoteAPI {
+            return TXAuthRemoteAPI()
+        }
+        
+        sharedUserSessionRepository = makeUserSessionRepository()
     }
     
     // MARK: - Main
@@ -53,7 +70,8 @@ public class TXAppDependencyContainer {
     }
     
     func makeLaunchViewModel() -> LaunchViewModel {
-        return LaunchViewModel(notSignedInResponder: sharedMainViewModel,
+        return LaunchViewModel(userSessionRepository: sharedUserSessionRepository,
+                               notSignedInResponder: sharedMainViewModel,
                                signedInResponder: sharedMainViewModel)
     }
     

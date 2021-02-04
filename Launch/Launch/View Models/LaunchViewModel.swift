@@ -24,7 +24,7 @@ public class LaunchViewModel: ViewModelType {
     }
     
     // MARK: - Properties
-//    private let userSessionRepository: UserSessionRepository
+    private let userSessionRepository: UserSessionRepository
     private let notSignedInResponder: NotSignedInResponder
     private let signedInResponder: SignedInResponder
     private let disposeBag = DisposeBag()
@@ -33,9 +33,10 @@ public class LaunchViewModel: ViewModelType {
     private let errorMessageSubject = PublishSubject<ErrorMessage>()
     
     // MARK: - Initializer
-    public init(notSignedInResponder: NotSignedInResponder,
+    public init(userSessionRepository: UserSessionRepository,
+                notSignedInResponder: NotSignedInResponder,
                 signedInResponder: SignedInResponder) {
-//        self.userSessionRepository = userSessionRepository
+        self.userSessionRepository = userSessionRepository
         self.notSignedInResponder = notSignedInResponder
         self.signedInResponder = signedInResponder
         
@@ -49,10 +50,9 @@ public class LaunchViewModel: ViewModelType {
     
     // MARK: - Internal logic
     private func loadUserSession() {
-        // TODO: - Implement auth check logic
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.notSignedInResponder.notSignedIn()
-        }
+        userSessionRepository.getUserID()
+            .done { self.signedInResponder.signedIn(with: $0) }
+            .catch { _ in self.notSignedInResponder.notSignedIn() }
     }
     
     // MARK: - Input events subscription
