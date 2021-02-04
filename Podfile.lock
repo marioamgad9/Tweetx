@@ -20,6 +20,7 @@ PODS:
   - SDWebImage (5.10.3):
     - SDWebImage/Core (= 5.10.3)
   - SDWebImage/Core (5.10.3)
+  - Swifter (2.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - SDWebImage (~> 5.0)
+  - Swifter (from `https://github.com/mattdonnelly/Swifter.git`)
 
 SPEC REPOS:
   trunk:
@@ -41,6 +43,15 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
 
+EXTERNAL SOURCES:
+  Swifter:
+    :git: https://github.com/mattdonnelly/Swifter.git
+
+CHECKOUT OPTIONS:
+  Swifter:
+    :commit: 50682ebe64e4c08f18957ccfd16888f035c20755
+    :git: https://github.com/mattdonnelly/Swifter.git
+
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
@@ -50,7 +61,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
+  Swifter: 4c2f8cf320c2f751c10128f841d8e9bd8609d988
 
-PODFILE CHECKSUM: f90f24bb21ad7c2b09ac085eae9434b8fced2cfa
+PODFILE CHECKSUM: d24c804c918536940cca1523b1ec8da88c1dc7e5
 
 COCOAPODS: 1.9.3

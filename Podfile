@@ -32,6 +32,9 @@ target 'Tweetx' do
 
   # Pod for SDWebImage
   pod 'SDWebImage', '~> 5.0'
+  
+  # Pod for Twitter client
+  pod 'Swifter', :git => "https://github.com/mattdonnelly/Swifter.git"
 end
 
 # Shared modules --------
@@ -54,6 +57,9 @@ target 'TXKit' do
     
     # Pod for keychain access
     pod 'KeychainAccess'
+    
+    # Pod for Twitter client
+    pod 'Swifter', :git => "https://github.com/mattdonnelly/Swifter.git"
 end
 
 # Feature modules --------
