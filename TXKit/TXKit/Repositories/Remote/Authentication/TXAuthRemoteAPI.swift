@@ -6,7 +6,6 @@
 //
 
 import PromiseKit
-import UIKit
 import Swifter
 
 public class TXAuthRemoteAPI: AuthRemoteAPI {

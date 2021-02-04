@@ -7,7 +7,6 @@
 
 import Foundation
 import PromiseKit
-import UIKit
 
 /// Handles authenticating the user
 public protocol AuthRemoteAPI {
