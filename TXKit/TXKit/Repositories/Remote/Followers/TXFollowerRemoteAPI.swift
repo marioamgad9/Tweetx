@@ -50,9 +50,20 @@ public class TXFollowerRemoteAPI: FollowersRemoteAPI {
     
     public func getTweetsForFollower(followerId: String) -> Promise<[Tweet]> {
         return Promise<[Tweet]> { seal in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                seal.fulfill([])
-            }
+            self.swifter.getTimeline(for: .id(followerId), count: 10, includeRetweets: false, success: { (json) in
+                guard let tweetsJSON = json.array else {
+                    seal.reject(TXKitError.notFound)
+                    return
+                }
+                
+                var tweets: [Tweet] = []
+                for tweetJSON in tweetsJSON {
+                    tweets.append(Tweet(from: tweetJSON))
+                }
+                seal.fulfill(tweets)
+            }, failure: { (error) in
+                seal.reject(TXKitError.unknown)
+            })
         }
     }
 }

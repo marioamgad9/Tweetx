@@ -19,7 +19,7 @@ public struct TwitterUser {
     public let profilePicture: String?
     public let backgroundImage: String?
     
-    // MARK: - Methods
+    // MARK: - Initializers
     init(from json: JSON) {
         self.id = json["id_str"].string ?? ""
         self.name = json["name"].string ?? ""
@@ -29,7 +29,7 @@ public struct TwitterUser {
         self.backgroundImage = json["profile_background_image_url_https"].string
     }
     
-    init(id: String, name: String, twitterHandle: String, bio: String?, profilePicture: String?, backgroundImage: String?) {
+    private init(id: String, name: String, twitterHandle: String, bio: String?, profilePicture: String?, backgroundImage: String?) {
         self.id = id
         self.name = name
         self.twitterHandle = twitterHandle
@@ -38,6 +38,7 @@ public struct TwitterUser {
         self.backgroundImage = backgroundImage
     }
     
+    // MARK: - Methods
     public static func dummyValue() -> TwitterUser {
         return TwitterUser(id: "0", name: "", twitterHandle: "", bio: "", profilePicture: "", backgroundImage: "")
     }

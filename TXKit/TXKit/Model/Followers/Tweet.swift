@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import Swifter
 
 public struct Tweet {
-    public let id: Int
+    
+    // MARK: - Properties
+    public let id: String
     public let content: String
-    public let time: Date
+    public let time: String
     public let user: TwitterUser
+    
+    // MARK: - Initializer
+    init(from json: JSON) {
+        self.id = json["id_str"].string ?? ""
+        self.content = json["text"].string ?? ""
+        self.user = TwitterUser(from: json["user"])
+        self.time = json["created_at"].string ?? ""
+    }
 }
