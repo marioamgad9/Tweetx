@@ -58,6 +58,7 @@ public class FollowersListViewModel: ViewModelType {
         
         // Subscribe to input events
         subscribeForFetchFollowers()
+        subscribeForRefreshFollowers()
         subscribeForFollowerSelected()
         subscribeForSignOut()
     }

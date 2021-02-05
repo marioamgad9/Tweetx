@@ -85,7 +85,7 @@ public class FollowersListViewController: NiblessViewController {
 // MARK: - Root view responder
 extension FollowersListViewController: FollowersListRootViewResponder {
     func refreshFollowersList() {
-        
+        viewModel.input.refreshFollowers.onNext(())
     }
     
     func tableViewDidReachEnd() {

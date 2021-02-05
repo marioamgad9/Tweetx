@@ -24,6 +24,7 @@ class FollowersListRootView: NiblessView, Loadable {
         tableView.backgroundColor = .clear
         return tableView
     }()
+    private let refreshControl = UIRefreshControl()
     
     // MARK: - Properties
     private let responder: FollowersListRootViewResponder
@@ -57,6 +58,14 @@ class FollowersListRootView: NiblessView, Loadable {
     private func configureTableViews() {
         followersTableView.registerCellFromClass(FollowerTableViewCell.self)
         followersTableView.delegate = self
+        followersTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshControlActivated), for: .valueChanged)
+    }
+    
+    
+    @objc private func refreshControlActivated() {
+        responder.refreshFollowersList()
+        refreshControl.endRefreshing()
     }
 }
 
