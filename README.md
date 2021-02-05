@@ -18,6 +18,16 @@ This sample app was built using a modular version of MVVM. It's built with scala
 * **Followers**: Handles showing the list of followers for the user and basic actions on them.
 
 
+## Areas for improvement
+
+* The caching system could be more personalized to cache followers for each users and not have to clear cache every time the user signs out.
+* Handle empty states for lists to show an illustration and a refresh button
+* Authenticate user using access token not just userID. (I only used userID as the app doesn't have access to any private data, it only shows public info like followers list and their tweets)
+* Ideally, I would have invested more than 15 mins in designing the user interface.
+* Implement header that stretches to top when bouncing from scroll.
+* Make profile picture and background clickable to present a fullscreen image overlay.
+
+
 ## Requirements
 
 - iOS 12.1+
