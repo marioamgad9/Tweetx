@@ -43,6 +43,8 @@
 		42DC087A25CA132D003E8FB7 /* TXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC087925CA132D003E8FB7 /* TXNavigationController.swift */; };
 		42DC08C225CA1C27003E8FB7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */; };
 		42DC098C25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */; };
+		42E7085325CD458D005A6D04 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7085125CD458D005A6D04 /* ErrorDialog.swift */; };
+		42E7085425CD458D005A6D04 /* DialogPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7085225CD458D005A6D04 /* DialogPopupViewController.swift */; };
 		945C898DB723F0B3EF49AE3C /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F787A1B3ED3125CC675305B /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		42DC087925CA132D003E8FB7 /* TXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXNavigationController.swift; sourceTree = "<group>"; };
 		42DC08C125CA1C27003E8FB7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDataSourceConfigurator.swift; sourceTree = "<group>"; };
+		42E7085125CD458D005A6D04 /* ErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDialog.swift; sourceTree = "<group>"; };
+		42E7085225CD458D005A6D04 /* DialogPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogPopupViewController.swift; sourceTree = "<group>"; };
 		6B7D3C1013E3214244F46A40 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
 		F5A3E6B841B5EC1EFD637B22 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +236,7 @@
 			children = (
 				42DC08C025CA1C1A003E8FB7 /* Buttons */,
 				42DC087825CA1316003E8FB7 /* Navigation Controllers */,
+				42E7085025CD4575005A6D04 /* Dialogs */,
 				42DC079625CA0744003E8FB7 /* Others */,
 			);
 			path = "Custom Views";
@@ -268,6 +273,15 @@
 				42DC098B25CAEA26003E8FB7 /* TvDataSourceConfigurator.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		42E7085025CD4575005A6D04 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				42E7085225CD458D005A6D04 /* DialogPopupViewController.swift */,
+				42E7085125CD458D005A6D04 /* ErrorDialog.swift */,
+			);
+			path = Dialogs;
 			sourceTree = "<group>";
 		};
 		5002E33ACE43CE18DF5FCED0 /* Frameworks */ = {
@@ -403,6 +417,7 @@
 			files = (
 				42DC078A25CA06EC003E8FB7 /* UIFont+Accessors.swift in Sources */,
 				42DC075625CA052B003E8FB7 /* NiblessTabBarController.swift in Sources */,
+				42E7085325CD458D005A6D04 /* ErrorDialog.swift in Sources */,
 				42DC076C25CA057D003E8FB7 /* Colors.swift in Sources */,
 				42DC076325CA055B003E8FB7 /* Loadable.swift in Sources */,
 				42DC078B25CA06EC003E8FB7 /* UILabel+CharacterSpacing.swift in Sources */,
@@ -415,6 +430,7 @@
 				42DC078E25CA06EC003E8FB7 /* UIView+Configuration.swift in Sources */,
 				42DC078F25CA06EC003E8FB7 /* UIViewController+Keyboard.swift in Sources */,
 				42DC079825CA074B003E8FB7 /* Banner.swift in Sources */,
+				42E7085425CD458D005A6D04 /* DialogPopupViewController.swift in Sources */,
 				42DC075D25CA0547003E8FB7 /* AnchoredConstraints.swift in Sources */,
 				42DC076425CA055B003E8FB7 /* KeyboardResponsive.swift in Sources */,
 				42DC078625CA06EC003E8FB7 /* UIView+VisualEffects.swift in Sources */,

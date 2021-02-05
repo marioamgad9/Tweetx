@@ -23,12 +23,12 @@ public class TXFollowerRemoteAPI: FollowersRemoteAPI {
     }
     
     // MARK: - Methods
-    public func getFollowers() -> Promise<[TwitterUser]> {
-        return Promise<[TwitterUser]> { seal in
+    public func getFollowers(cursor: String?) -> Promise<([TwitterUser], String?)> {
+        return Promise<([TwitterUser], String?)> { seal in
             // Get user ID
             dataStore.getUserID().done { userId in
                 // Fetch followers list from twitter
-                self.swifter.getUserFollowers(for: .id(userId), success: { (json, next, prev) in
+                self.swifter.getUserFollowers(for: .id(userId), cursor: cursor, success: { (json, prev, next) in
                     guard let followersJSON = json.array else {
                         seal.reject(TXKitError.notFound)
                         return
@@ -38,7 +38,7 @@ public class TXFollowerRemoteAPI: FollowersRemoteAPI {
                     for followerJSON in followersJSON {
                         followers.append(TwitterUser(from: followerJSON))
                     }
-                    seal.fulfill(followers)
+                    seal.fulfill((followers, next))
                 }, failure: { (error) in
                     seal.reject(TXKitError.unknown)
                 })

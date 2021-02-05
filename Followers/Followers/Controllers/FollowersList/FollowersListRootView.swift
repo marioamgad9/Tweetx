@@ -8,6 +8,11 @@
 import UIKit
 import Common
 
+protocol FollowersListRootViewResponder {
+    func refreshFollowersList()
+    func tableViewDidReachEnd()
+}
+
 /// The root view for FollowersListViewController
 class FollowersListRootView: NiblessView, Loadable {
     
@@ -20,8 +25,13 @@ class FollowersListRootView: NiblessView, Loadable {
         return tableView
     }()
     
+    // MARK: - Properties
+    private let responder: FollowersListRootViewResponder
+    
     // MARK: - Initializer
-    init(followersTvConfigurator: TvDataSourceConfigurator) {
+    init(followersTvConfigurator: TvDataSourceConfigurator,
+         responder: FollowersListRootViewResponder) {
+        self.responder = responder
         super.init(frame: .zero)
         
         configureTableViews()
@@ -46,5 +56,16 @@ class FollowersListRootView: NiblessView, Loadable {
     
     private func configureTableViews() {
         followersTableView.registerCellFromClass(FollowerTableViewCell.self)
+        followersTableView.delegate = self
+    }
+}
+
+// MARK: - Table view delegate
+extension FollowersListRootView: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Notify responder that table did reach end
+        if scrollView.didReachEnd(offset: 200) {
+            responder.tableViewDidReachEnd()
+        }
     }
 }

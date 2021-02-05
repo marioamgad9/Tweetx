@@ -34,7 +34,8 @@ public class FollowersListViewController: NiblessViewController {
     
     // MARK: - Methods
     public override func loadView() {
-        rootView = FollowersListRootView(followersTvConfigurator: configureFollowersTableView(tableView:))
+        rootView = FollowersListRootView(followersTvConfigurator: configureFollowersTableView(tableView:),
+                                         responder: self)
         view = rootView
     }
     
@@ -66,12 +67,28 @@ public class FollowersListViewController: NiblessViewController {
     }
     
     private func subscribeToIsLoading() {
-        viewModel.output.isLoading.drive(onNext: {
-            $0 ? self.rootView.showLoaderView() : self.rootView.hideLoaderView()
-        }).disposed(by: disposeBag)
+        Driver.combineLatest(viewModel.output.isLoading,
+                             viewModel.output.followers)
+            .filter { $1.count == 0 || !$0 }
+            .drive(onNext: { (loading, _) in
+                loading ? self.rootView.showLoaderView() : self.rootView.hideLoaderView()
+            }).disposed(by: disposeBag)
     }
     
     private func subscribeToErrorMessages() {
-        // TODO: - Implement error message presenting
+        viewModel.output.errorMessage
+            .drive(onNext: { self.present(errorMessage: $0)})
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Root view responder
+extension FollowersListViewController: FollowersListRootViewResponder {
+    func refreshFollowersList() {
+        
+    }
+    
+    func tableViewDidReachEnd() {
+        viewModel.input.fetchFollowers.onNext(())
     }
 }

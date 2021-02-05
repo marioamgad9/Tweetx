@@ -78,6 +78,8 @@ public class FollowerDetailsViewController: NiblessViewController {
     }
     
     private func subscribeToErrorMessages() {
-        // TODO: - Implement error message presenting
+        viewModel.output.errorMessage
+            .drive(onNext: { self.present(errorMessage: $0)})
+            .disposed(by: disposeBag)
     }
 }

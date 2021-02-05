@@ -21,7 +21,7 @@ public class TXAuthRemoteAPI: AuthRemoteAPI {
     
     // MARK: - Methods
     public func signInWithTwitter(viewController: UIViewController) -> Promise<String> {
-        return Promise<AccessToken> { seal in
+        return Promise<String> { seal in
             self.swifter.authorize(withCallback: NetworkConstants.TwitterConstants.callbackURL,
                                    presentingFrom: viewController) { (accessToken, _) in
                 guard let userId = accessToken?.userID else {

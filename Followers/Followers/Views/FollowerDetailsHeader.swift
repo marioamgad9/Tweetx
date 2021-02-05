@@ -75,7 +75,7 @@ class FollowerDetailsHeader: NiblessView {
     // MARK: - Methods
     func configure(with viewModel: FollowerDetailsHeaderViewModel) {
         backgroundImageView.sd_setImage(with: viewModel.backgroundImageURL,
-                                            placeholderImage: UIImage(named: "background-placeholdepr"))
+                                        placeholderImage: UIImage(named: "background-placeholder"))
         
         profilePictureImageView.sd_setImage(with: viewModel.profilePictureURL,
                                             placeholderImage: UIImage(named: "profile-placeholder"))

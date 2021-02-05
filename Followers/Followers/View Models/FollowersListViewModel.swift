@@ -17,6 +17,7 @@ public class FollowersListViewModel: ViewModelType {
     
     public struct Input {
         let fetchFollowers = PublishSubject<()>()
+        let refreshFollowers = PublishSubject<()>()
         let followerSelected = PublishSubject<FollowerCellViewModel>()
         let signOut = PublishSubject<()>()
     }
@@ -29,6 +30,7 @@ public class FollowersListViewModel: ViewModelType {
     
     // MARK: - Subjects
     private let followersSubject = BehaviorSubject<[TwitterUser]>(value: [])
+    private let followersNextCursorSubject = BehaviorSubject<String?>(value: nil)
     private let isLoadingSubject = BehaviorSubject<Bool>(value: false)
     private let errorMessageSubject = PublishSubject<ErrorMessage>()
     
@@ -61,15 +63,27 @@ public class FollowersListViewModel: ViewModelType {
     }
     
     // MARK: - Internal logic
-    private func loadFollowers() {
+    private func loadFollowers(nextCursor: String?) {
         isLoadingSubject.onNext(true)
-        followersRemoteAPI.getFollowers().done {
-            self.followersSubject.onNext($0)
+        followersRemoteAPI.getFollowers(cursor: nextCursor).done {
+            self.followersSubject.onNext(getFollowersValue() + $0.0)
+            self.followersNextCursorSubject.onNext($0.1)
         }
         .catch(handleError)
         .finally {
             self.isLoadingSubject.onNext(false)
         }
+        
+        func getFollowersValue() -> [TwitterUser] {
+            if let value = try? followersSubject.value() { return value }
+            else { return [] }
+        }
+    }
+    
+    private func refreshFollowers() {
+        followersSubject.onNext([])
+        followersNextCursorSubject.onNext(nil)
+        loadFollowers(nextCursor: nil)
     }
     
     private func signOut() {
@@ -80,8 +94,20 @@ public class FollowersListViewModel: ViewModelType {
     
     // MARK: - Input events subscription
     private func subscribeForFetchFollowers() {
-        input.fetchFollowers.subscribe(onNext: {
-            self.loadFollowers()
+        input.fetchFollowers
+            .withLatestFrom(Observable.combineLatest(followersNextCursorSubject,
+                                                     isLoadingSubject,
+                                                     followersSubject))
+            .filter { (_, isLoading, _) in !isLoading }
+            .filter { (nextCursor, _, followers) in  followers.count == 0 || nextCursor != nil}
+            .subscribe(onNext: { (nextCursor, _, _) in
+            self.loadFollowers(nextCursor: nextCursor)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeForRefreshFollowers() {
+        input.refreshFollowers.subscribe(onNext: {
+            self.refreshFollowers()
         }).disposed(by: disposeBag)
     }
     
@@ -100,6 +126,8 @@ public class FollowersListViewModel: ViewModelType {
     // MARK: - Error handling
     private func handleError(_ error: Error) {
         errorMessageSubject.onNext(ErrorMessage(title: "error_title.unexpected_error".localized,
-                                                message: "error_message.unexpected_error".localized))
+                                                message: "error_message.unexpected_error".localized,
+                                                callToActionLabel: "error_cta.try_again".localized,
+                                                callToActionResponse: { self.refreshFollowers() }))
     }
 }

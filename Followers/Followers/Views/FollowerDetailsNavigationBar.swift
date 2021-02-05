@@ -48,7 +48,7 @@ class FollowerDetailsNavigationBar: NiblessView {
     // MARK: - Methods
     func configure(with viewModel: FollowerDetailsHeaderViewModel) {
         backgroundImageView.sd_setImage(with: viewModel.backgroundImageURL,
-                                        placeholderImage: UIImage(named: "background-placeholdepr")) { (image, _, _, _) in
+                                        placeholderImage: UIImage(named: "background-placeholder")) { (image, _, _, _) in
             self.backgroundImageView.image = image?.sd_blurredImage(withRadius: 5)
         }
         
