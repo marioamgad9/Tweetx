@@ -28,3 +28,4 @@
 // MARK: Followers list screen
 "title.followers_list" = "My Followers";
 "label.exlore_tweets" = "Explore Tweets";
+"btn.signout" = "Sign out";

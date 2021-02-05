@@ -18,6 +18,7 @@ public class FollowersListViewModel: ViewModelType {
     public struct Input {
         let fetchFollowers = PublishSubject<()>()
         let followerSelected = PublishSubject<FollowerCellViewModel>()
+        let signOut = PublishSubject<()>()
     }
     
     public struct Output {
@@ -34,12 +35,18 @@ public class FollowersListViewModel: ViewModelType {
     // MARK: - Properties
     private let followersRemoteAPI: FollowersRemoteAPI
     private let followersNavigator: FollowersNavigator
+    private let userSessionRepository: UserSessionRepository
+    private let notSignedInResponder: NotSignedInResponder
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializer
-    public init(followersRemoteAPI: FollowersRemoteAPI, followersNavigator: FollowersNavigator) {
+    public init(userSessionRepository: UserSessionRepository, notSignedInResponder: NotSignedInResponder,
+                followersRemoteAPI: FollowersRemoteAPI, followersNavigator: FollowersNavigator) {
+        self.userSessionRepository = userSessionRepository
+        self.notSignedInResponder = notSignedInResponder
         self.followersRemoteAPI = followersRemoteAPI
         self.followersNavigator = followersNavigator
+        
         
         // Configure input & output
         input = Input()
@@ -50,6 +57,7 @@ public class FollowersListViewModel: ViewModelType {
         // Subscribe to input events
         subscribeForFetchFollowers()
         subscribeForFollowerSelected()
+        subscribeForSignOut()
     }
     
     // MARK: - Internal logic
@@ -64,6 +72,12 @@ public class FollowersListViewModel: ViewModelType {
         }
     }
     
+    private func signOut() {
+        userSessionRepository.signOut().done {
+            self.notSignedInResponder.notSignedIn()
+        }.catch(handleError)
+    }
+    
     // MARK: - Input events subscription
     private func subscribeForFetchFollowers() {
         input.fetchFollowers.subscribe(onNext: {
@@ -74,6 +88,12 @@ public class FollowersListViewModel: ViewModelType {
     private func subscribeForFollowerSelected() {
         input.followerSelected.subscribe(onNext: {
             self.followersNavigator.navigate(to: .followerDetails(follower: $0.follower))
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeForSignOut() {
+        input.signOut.subscribe(onNext: {
+            self.signOut()
         }).disposed(by: disposeBag)
     }
     

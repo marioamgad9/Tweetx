@@ -27,6 +27,9 @@ public class FollowersListViewController: NiblessViewController {
         super.init()
         
         title = "title.followers_list".localized
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "btn.signout".localized, style: .plain,
+                                                            target: self, action: #selector(signOutButtonTapped))
     }
     
     // MARK: - Methods
@@ -45,6 +48,10 @@ public class FollowersListViewController: NiblessViewController {
         subscribeToErrorMessages()
         
         // Bind input events to view model
+    }
+    
+    @objc private func signOutButtonTapped() {
+        viewModel.input.signOut.onNext(())
     }
     
     private func configureFollowersTableView(tableView: UITableView) {

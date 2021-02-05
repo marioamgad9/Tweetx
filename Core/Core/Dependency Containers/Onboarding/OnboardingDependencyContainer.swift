@@ -14,13 +14,11 @@ public class OnboardingDependencyContainer {
     
     // MARK: - Properties from parent container
     let sharedMainViewModel: MainViewModel
+    let sharedUserSessionRepository: UserSessionRepository
     
     // MARK: - Long lived dependencies
     /// The shared coordinator for the onboarding flow
     weak var sharedOnboardingCoordinator: OnboardingCoordinator!
-    
-    /// The shared repository that handles user authentication
-    let sharedUserSessionRepository: UserSessionRepository
     
     // MARK: - Initializer
     init(appDependencyContainer: TXAppDependencyContainer) {

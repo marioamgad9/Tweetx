@@ -14,15 +14,18 @@ public class FollowersDependencyContainer {
     
     // MARK: - Properties from parent container
     let sharedMainViewModel: MainViewModel
+    let sharedUserSessionRepository: UserSessionRepository
     
     // MARK: - Long lived dependencies
     /// The shared coordinator for the followers flow
     weak var sharedFollowersCoordinator: FollowersCoordinator!
+    
     let sharedFollowersRemoteAPI: FollowersRemoteAPI
     
     // MARK: - Initializer
     init(appDependencyContainer: TXAppDependencyContainer) {
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
+        self.sharedUserSessionRepository = appDependencyContainer.sharedUserSessionRepository
         self.sharedFollowersRemoteAPI = TXFollowerRemoteAPI()
     }
     
@@ -37,7 +40,9 @@ public class FollowersDependencyContainer {
     }
     
     func makeFollowersListViewModel() -> FollowersListViewModel {
-        return FollowersListViewModel(followersRemoteAPI: sharedFollowersRemoteAPI,
+        return FollowersListViewModel(userSessionRepository: sharedUserSessionRepository,
+                                      notSignedInResponder: sharedMainViewModel,
+                                      followersRemoteAPI: sharedFollowersRemoteAPI,
                                       followersNavigator: sharedFollowersCoordinator)
     }
     

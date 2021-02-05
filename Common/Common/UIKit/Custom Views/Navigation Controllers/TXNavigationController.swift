@@ -20,9 +20,8 @@ open class TXNavigationController: NiblessNavigationController, UIGestureRecogni
                                              NSAttributedString.Key.font: UIFont.bold(size: .big)]
         navigationBar.shadowImage = UIImage()
         
-        // Makes bar button text transparent in navigation bars
         let attributes = [NSAttributedString.Key.font:  UIFont.regular(size: .normal),
-                          NSAttributedString.Key.foregroundColor: UIColor.clear]
+                          NSAttributedString.Key.foregroundColor: UIColor.white]
         let BarButtonItemAppearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [TXNavigationController.self])
         
         BarButtonItemAppearance.setTitleTextAttributes(attributes, for: .normal)

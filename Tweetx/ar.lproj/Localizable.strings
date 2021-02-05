@@ -28,3 +28,4 @@
 // MARK: Followers list screen
 "title.followers_list" = "متابعيني";
 "label.exlore_tweets" = "تصفح التغريدات";
+"btn.signout" = "تسجيل خروج";
