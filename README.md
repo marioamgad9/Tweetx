@@ -23,6 +23,7 @@ This sample app was built using a modular version of MVVM. It's built with scala
 * The caching system could be more personalized to cache followers for each users and not have to clear cache every time the user signs out.
 * Handle empty states for lists to show an illustration and a refresh button
 * Authenticate user using access token not just userID. (I only used userID as the app doesn't have access to any private data, it only shows public info like followers list and their tweets)
+* Invest more time in error handling to handle custom scenarios and present clearer messages to the user with appropriate call to actions.
 * Ideally, I would have invested more than 15 mins in designing the user interface.
 * Implement header that stretches to top when bouncing from scroll.
 * Make profile picture and background clickable to present a fullscreen image overlay.
