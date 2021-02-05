@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (5.4.1)
   - KeychainAccess (4.2.1)
   - lottie-ios (3.1.9)
   - PromiseKit (6.13.1):
@@ -23,7 +22,6 @@ PODS:
   - Swifter (2.5.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
   - KeychainAccess
   - lottie-ios
   - PromiseKit (~> 6.8)
@@ -34,7 +32,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - KeychainAccess
     - lottie-ios
     - PromiseKit
@@ -53,7 +50,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/mattdonnelly/Swifter.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
@@ -63,6 +59,6 @@ SPEC CHECKSUMS:
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   Swifter: 4c2f8cf320c2f751c10128f841d8e9bd8609d988
 
-PODFILE CHECKSUM: d24c804c918536940cca1523b1ec8da88c1dc7e5
+PODFILE CHECKSUM: d7fb18f1b4c17ff24e49996175af201ccb7dc8e6
 
 COCOAPODS: 1.9.3

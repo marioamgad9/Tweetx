@@ -24,9 +24,6 @@ target 'Tweetx' do
   # Pod for lottie animations
   pod 'lottie-ios'
 
-  # Pod for alamofire
-  pod 'Alamofire', '~> 5.2'
-
   # Pod for keychain access
   pod 'KeychainAccess'
 
@@ -51,9 +48,6 @@ target 'TXKit' do
     project 'TXKit/TXKit'
     
     reactivePods
-    
-    # Pod for alamofire
-    pod 'Alamofire', '~> 5.2'
     
     # Pod for keychain access
     pod 'KeychainAccess'

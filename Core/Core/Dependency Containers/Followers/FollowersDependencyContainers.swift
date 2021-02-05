@@ -26,7 +26,7 @@ public class FollowersDependencyContainer {
     init(appDependencyContainer: TXAppDependencyContainer) {
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
         self.sharedUserSessionRepository = appDependencyContainer.sharedUserSessionRepository
-        self.sharedFollowersRemoteAPI = TXFollowerRemoteAPI()
+        self.sharedFollowersRemoteAPI = TXFollowerRemoteAPI(dataStore: TXUserSessionDataStore())
     }
     
     // MARK: - Methods

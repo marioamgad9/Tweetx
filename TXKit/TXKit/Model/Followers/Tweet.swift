@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Tweet: Codable {
+public struct Tweet {
     public let id: Int
     public let content: String
     public let time: Date
